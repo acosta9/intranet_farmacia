@@ -3,7 +3,7 @@
 ?>
 
 <?php
-  $fecha=date('Y/m'."/01")." 00:00:00";
+  $fecha=date('2021/01'."/01")." 00:00:00";
   $q = Doctrine_Manager::getInstance()->getCurrentConnection();
   $query = $q->execute("SELECT SUM(rp.monto) as money, COUNT(DISTINCT rp.cuentas_cobrar_id) as count
     FROM recibo_pago as rp
@@ -32,7 +32,7 @@
 // Ventas del dia
 
 
-  $fechan=date('Y/m/d')." 00:00:00";
+  $fechan=date('2021/01/d')." 00:00:00";
     
     $query = $q->execute("SELECT SUM(rp.monto) as money, COUNT(DISTINCT rp.cuentas_cobrar_id) as count
     FROM recibo_pago as rp
@@ -43,7 +43,7 @@
 
     $query = $q->execute("SELECT count(*) as total_records 
     FROM (SELECT count(*) as counts FROM cuentas_cobrar 
-    WHERE estatus<>4 && empresa_id IN ($emp) && created_at >= '".date('Y/m/d')." 00:00:00' "." group by cliente_id) tmp");
+    WHERE estatus<>4 && empresa_id IN ($emp) && created_at >= '".date('2021/01/d')." 00:00:00' "." group by cliente_id) tmp");
     
     $clientesh = $query->fetchAll();
 
@@ -55,7 +55,7 @@
     INNER JOIN inventario  AS i ON fd.inventario_id = i.id
     INNER JOIN producto    AS p ON i.producto_id = p.id
     where f.empresa_id IN ($emp)
-    AND f.created_at >= '".date('Y/m/d')." 00:00:00' ");
+    AND f.created_at >= '".date('2021/01/d')." 00:00:00' ");
 
     $utilidah = $query->fetchAll();
 
@@ -171,7 +171,7 @@
       <div class="card-body">
         <canvas id="revenue-chart" width="800px" height="160px"></canvas>
         <?php
-          $fecha2=date('Y/m'."/01", strtotime("-6 months"))." 00:00:00";
+          $fecha2=date('2021/01'."/01", strtotime("-6 months"))." 00:00:00";
           $mes = [1=>'Enero', 2=>'Febrero', 3=>'Marzo', 4=>'Abril', 5=>'Mayo', 6=>'Junio', 7=>'Julio', 8=>'Agosto', 9=>'Septiembre', 10=>'Octubre', 11=>'Noviembre', 12=>'Diciembre'];
           $facts = $q->execute("SELECT SUM(cc.total) as money, MONTH(cc.created_at) as mes
             FROM cuentas_cobrar as cc

@@ -2,7 +2,7 @@
 <?php
   $emp=$sf_params->get('emp');
   $q = Doctrine_Manager::getInstance()->getCurrentConnection();
-  $fecha=date('Y/m'."/01")." 00:00:00";
+  $fecha=date('2021/01'."/01")." 00:00:00";
 ?>
 <div class="row">
   <div class="col-lg-12">

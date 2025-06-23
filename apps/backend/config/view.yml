@@ -6,8 +6,8 @@ default:
     content-type: text/html
 
   metas:
-    title:        backend jmw
-    description:  sistema administrativo jmw casa de representaciones
+    title:        backend farmacia
+    description:  sistema administrativo farmacia casa de representaciones
     keywords:     sistema, administrativo, farmacia, punto fijo, falcon, drogueria
     language:     es
     robots:       index, follow

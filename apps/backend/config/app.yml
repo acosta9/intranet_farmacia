@@ -15,9 +15,9 @@ all:
     image_dir:                    /sfAdminDashPlugin/images/icons/
     default_image:                config.png
     resize_mode:                  thumbnail
-    site:                         jmw.com
-    siteac:                       JMW
-    siteref:                      http://jmw.com
+    site:                         intranet.farmacia.com
+    siteac:                       farmacia
+    siteref:                      http://intranet.farmacia.com
     version:                      1.0.0-beta.1
     include_path:                 true
     include_jquery_no_conflict:   false

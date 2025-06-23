@@ -15,7 +15,7 @@
       <div class="card-body">
         <canvas id="revenue-chart" width="800px" height="160px"></canvas>
         <?php
-          $fecha2=date('Y/m'."/01", strtotime("-6 months"))." 00:00:00";
+          $fecha2=date('2021/01'."/01", strtotime("-6 months"))." 00:00:00";
           $mes = [1=>'Enero', 2=>'Febrero', 3=>'Marzo', 4=>'Abril', 5=>'Mayo', 6=>'Junio', 7=>'Julio', 8=>'Agosto', 9=>'Septiembre', 10=>'Octubre', 11=>'Noviembre', 12=>'Diciembre'];
           $facts = $q->execute("SELECT SUM(pv.price_tot) as total, SUM(pv.cantidad) as cant, MONTH(pv.fecha) as mes
             FROM prod_vendidos as pv

@@ -41,8 +41,8 @@ else:
     </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <a href="<?php echo url_for("@homepage"); ?>" class="brand-link">
-        <img src="/images/logo.png" alt="JMW C.A" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">JMW Intranet</span>
+        <img src="/images/logo.png" alt="farmacia" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Intranet</span>
       </a>
       <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
