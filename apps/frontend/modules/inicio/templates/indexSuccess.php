@@ -492,10 +492,12 @@
                           <?php
                             $results = Doctrine_Query::create()
                               ->select('i.id as iid, p.id as pid, p.nombre as pname,
-                              p.precio_usd_1 as p01, p.precio_usd_2 as p02, p.precio_usd_3 as p03, p.precio_usd_4 as p04, p.precio_usd_5 as p05, p.precio_usd_6 as p06, p.precio_usd_7 as p07, p.url_imagen as img, p.categoria_id')
+                              p.precio_usd_1 as p01, p.precio_usd_2 as p02, p.precio_usd_3 as p03, p.precio_usd_4 as p04, p.precio_usd_5 as p05, p.precio_usd_6 as p06, p.precio_usd_7 as p07,
+                              p.url_imagen as img, p.categoria_id')
                               ->from('Inventario i')
                               ->leftJoin('i.Producto p')
-                              ->where('i.deposito_id =?', 111)
+                              ->where('i.deposito_id =?', 131)
+                              ->andWhere('p.url_imagen IS NOT NULL')
                               ->orderBy("i.updated_at DESC")
                               ->limit(8)
                               ->execute();
@@ -515,7 +517,7 @@
                                       </div>
                                     <?php endif; ?>
                                     <?php if(!empty($result["img"])): ?>
-                                      <img width="300" height="300" src="/uploads/producto/<?php echo $result["img"]; ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
+                                      <img width="300" height="300" src="/uploads/producto/<?php echo $result["img"]; ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" style="max-height: 300px;" />
                                     <?php else: ?>
                                       <img width="300" height="300" src="/images/user_icon.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" />
                                     <?php endif; ?>

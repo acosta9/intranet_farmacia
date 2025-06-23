@@ -443,6 +443,7 @@
                 <div class="whb-column whb-col-center whb-visible-lg whb-empty-column"></div>
                 <div class="whb-column whb-col-right whb-visible-lg">
 									<div class="woodmart-social-icons text-center icons-design-default icons-size- color-scheme-light social-share social-form-circle">
+										bbbbbbbbb
 										<?php
 											$socials = Doctrine_Query::create()
 											->select('b.*')
@@ -894,8 +895,8 @@
 					<div class="container">
 						<div class="min-footer">
 							<div class="col-left reset-mb-10">
-								<small><a href="http://droguesi.com"><strong>DROGUESI</strong></a> <i class="fa fa-copyright"></i>
-									2020 CREADO POR <a href="mailto:juan9acosta@gmail.com"><strong>Juan Acosta</strong></a></small> </div>
+								<small><a href="http://drogueria.com"><strong>DROGUESI</strong></a> <i class="fa fa-copyright"></i>
+									<?php echo date("Y"); ?> CREADO POR <a href="mailto:juan9acosta@gmail.com"><strong>Juan Acosta</strong></a></small> </div>
 						</div>
 					</div>
 				</div>

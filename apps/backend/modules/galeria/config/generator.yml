@@ -68,10 +68,10 @@ generator:
         sort: [updated_at, desc]
         batch_actions: {}
       filter:
-        display: [nombre, texto, updated_at, created_by]
+        display: [nombre, texto, updated_at, created_by, _mask]
       form:
         display:
-          requeridos: [orden, posicion, nombre, enlace, url_imagen, texto]
+          requeridos: [orden, posicion, nombre, enlace, url_imagen, texto, _mask]
         actions:
           _delete:  ~
           _list: ~

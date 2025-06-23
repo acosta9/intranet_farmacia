@@ -16,7 +16,7 @@ all:
     default_image:                config.png
     resize_mode:                  thumbnail
     site:                         intranet.farmacia.com
-    siteac:                       farmacia
+    siteac:                       Farmacia
     siteref:                      http://intranet.farmacia.com
     version:                      1.0.0-beta.1
     include_path:                 true

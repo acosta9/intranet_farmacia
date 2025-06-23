@@ -6,9 +6,9 @@ default:
     content-type: text/html
 
   metas:
-    title:        Droguesi ⎜Tu drogueria online
+    title:        Tu drogueria online
     description:  Genera tus ordenes online
-    keywords:     droguesi, farmasi, punto fijo, venezuela, online
+    keywords:     punto fijo, venezuela, online
     language:     es
     robots:       index, follow
 
