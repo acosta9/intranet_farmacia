@@ -1,0 +1,4343 @@
+ServerConf:
+  connection: doctrine
+  tableName: server_conf
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+ServerName:
+  connection: doctrine
+  tableName: server_name
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    valor:
+      type: string(200)
+      unsigned: true
+      notnull: true
+    nombre:
+      type: string(200)
+      unsigned: true
+      notnull: true
+    tipo:
+      type: string(5)
+      unsigned: true
+      notnull: true
+    srvid:
+      type: string(20)
+      unsigned: true
+      notnull: true    
+Oferta:
+  connection: doctrine
+  tableName: oferta
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    nombre:
+      type: string()
+      notnull: true
+    fecha:
+      type: date(25)
+      notnull: true
+    fecha_venc:
+      type: date(25)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+    tipo_oferta:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    activo:
+      type: boolean
+      notnull: true
+      default: true
+    precio_usd:
+      type: string(20)
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: false
+    exento:
+      type: boolean
+      notnull: true
+      default: true
+    tasa:
+      type: string(20)
+      notnull: true
+      default: "T01"
+    url_imagen:
+      type: string(200)
+      notnull: false
+    url_imagen_desc:
+      type: string()
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    NotaEntregaDet:
+      local: oferta_id
+      foreign: id
+      type: many
+    FacturaDet:
+      local: id
+      foreign: oferta_id
+      type: many
+    OfertaImg:
+      local: id
+      foreign: oferta_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+OfertaDet:
+  connection: doctrine
+  tableName: oferta_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+  relations:
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+OfertaImg:
+  connection: doctrine
+  tableName: oferta_img
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: true
+  relations:
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+Producto:
+  connection: doctrine
+  tableName: producto
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(200)
+      notnull: true
+    serial:
+      type: string(100)
+      notnull: true
+      unique: true
+    serial2:
+      type: string(100)
+      notnull: false
+      unique: false
+    serial3:
+      type: string(100)
+      notnull: false
+      unique: false
+    serial4:
+      type: string(100)
+      notnull: false
+      unique: false
+    tasa:
+      type: string(20)
+      notnull: false
+    serial_bulto1:
+      type: string(100)
+      notnull: false
+      unique: true
+    cantidad_bulto1:
+      type: string(10)
+      notnull: false
+    serial_bulto2:
+      type: string(100)
+      notnull: false
+      unique: true
+    cantidad_bulto2:
+      type: string(10)
+      notnull: false
+    codigo:
+      type: string(100)
+      notnull: false
+    laboratorio_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    categoria_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    unidad_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    subproducto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    qty_desglozado:
+      type: integer(4)
+      notnull: false
+    tipo:
+      type: boolean
+      notnull: true
+      default: false
+    activo:
+      type: boolean
+      notnull: true
+      default: true
+    costo_usd_1:
+      type: string(20)
+      notnull: false
+    util_usd_1:
+      type: string(20)
+      notnull: false
+    util_usd_2:
+      type: string(20)
+      notnull: false
+    util_usd_3:
+      type: string(20)
+      notnull: false
+    util_usd_4:
+      type: string(20)
+      notnull: false
+    util_usd_5:
+      type: string(20)
+      notnull: false
+    util_usd_6:
+      type: string(20)
+      notnull: false
+    util_usd_7:
+      type: string(20)
+      notnull: false
+    util_usd_8:
+      type: string(20)
+      notnull: false
+    precio_usd_1:
+      type: string(20)
+      notnull: false
+    precio_usd_2:
+      type: string(20)
+      notnull: false
+    precio_usd_3:
+      type: string(20)
+      notnull: false
+    precio_usd_4:
+      type: string(20)
+      notnull: false
+    precio_usd_5:
+      type: string(20)
+      notnull: false
+    precio_usd_6:
+      type: string(20)
+      notnull: false
+    precio_usd_7:
+      type: string(20)
+      notnull: false
+    precio_usd_8:
+      type: string(20)
+      notnull: false
+    exento:
+      type: boolean
+      notnull: true
+      default: true
+    destacado:
+      type: boolean
+      notnull: true
+      default: false
+    tags:
+      type: string(200)
+      notnull: false
+    url_imagen:
+      type: string(200)
+      notnull: false
+    url_imagen_desc:
+      type: string()
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    mas_detalles:
+      type: string()
+      notnull: false
+  relations:
+    Producto:
+      local: subproducto_id
+      foreign: id
+      type: one
+    Inventario:
+      local: id
+      foreign: producto_id
+      type: many
+    ProductoImg:
+      local: id
+      foreign: producto_id
+      type: many
+    ProdUnidad:
+      local: unidad_id
+      foreign: id
+      type: one
+    ProdLaboratorio:
+      local: laboratorio_id
+      foreign: id
+      type: one
+      onDelete: "SET NULL"
+    ProdCategoria:
+      local: categoria_id
+      foreign: id
+      type: one
+    Compuesto:
+      class: Compuesto
+      refClass: ProdCompuesto
+      local: producto_id
+      foreign: compuesto_id
+      foreignAlias: Producto
+  actAs:
+    Timestampable: ~
+    Signable: ~
+ProductoImg:
+  connection: doctrine
+  tableName: producto_img
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: true
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+ProdUnidad:
+  connection: doctrine
+  tableName: prod_unidad
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string()
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Producto:
+      local: id
+      foreign: unidad_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+ProdCategoria:
+  connection: doctrine
+  tableName: prod_categoria
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    codigo:
+      type: string(10)
+      notnull: true
+    codigo_full:
+      type: string(10)
+      notnull: false
+    nombre:
+      type: string()
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    url_imagen:
+      type: string(200)
+      notnull: false
+  relations:
+    Producto:
+      local: id
+      foreign: categoria_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+ProdLaboratorio:
+  connection: doctrine
+  tableName: prod_laboratorio
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string()
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Producto:
+      local: id
+      foreign: laboratorio_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+ProdCompuesto:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    compuesto_id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+  relations:
+    Producto:
+      class: Producto
+      local: producto_id
+      onDelete: CASCADE
+    Compuesto:
+      class: Compuesto
+      local: compuesto_id
+      onDelete: CASCADE
+Compuesto:
+  connection: doctrine
+  tableName: compuesto
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string()
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Producto:
+      class: Producto
+      refClass: ProdCompuesto
+      local: compuesto_id
+      foreign: producto_id
+      foreignAlias: Compuesto
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Inventario:
+  connection: doctrine
+  tableName: inventario
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cantidad:
+      type: string(10)
+      notnull: true
+      default: "0"
+    activo:
+      type: boolean
+      notnull: true
+      default: true
+    limite_stock:
+      type: integer(4)
+      notnull: true
+      default: 0
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    FacturaDet:
+      local: id
+      foreign: inventario_id
+      type: many
+    NotaEntregaDet:
+      local: id
+      foreign: inventario_id
+      type: many
+    OfertaDet:
+      local: id
+      foreign: inventario_id
+      type: many
+    TrasladoDet:
+      local: id
+      foreign: inventario_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+InventarioDet:
+  connection: doctrine
+  tableName: inventario_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha_venc:
+      type: date(25)
+      notnull: true
+    lote:
+      type: string(200)
+      notnull: true
+    cantidad:
+      type: string(10)
+      notnull: true
+      default: "0"
+  relations:
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+InvDeposito:
+  connection: doctrine
+  tableName: inv_deposito
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    nombre:
+      type: string(200)
+      notnull: true
+    acronimo:
+      type: string(20)
+      notnull: true
+    tipo:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Oferta:
+      local: id
+      foreign: deposito_id
+      type: many
+    Inventario:
+      local: id
+      foreign: deposito_id
+      type: many
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Factura:
+      local: id
+      foreign: deposito_id
+      type: many
+    NotaEntrega:
+      local: id
+      foreign: deposito_id
+      type: many
+    Traslado:
+      local: id
+      foreign: deposito_desde
+      type: many
+    Traslado2:
+      local: id
+      foreign: deposito_hasta
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Empresa:
+  connection: doctrine
+  tableName: empresa
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    nombre:
+      type: string(200)
+      notnull: true
+    acronimo:
+      type: string(20)
+      notnull: true
+    ncontrol:
+      type: string(200)
+      notnull: true
+    nfactura:
+      type: string(200)
+      notnull: true
+    ndespacho:
+      type: string(200)
+      notnull: true
+    nentrega:
+      type: string(200)
+      notnull: true
+    npago:
+      type: string(200)
+      notnull: true
+    ncredito:
+      type: string(200)
+      notnull: true
+    ntraslado:
+      type: string(200)
+      notnull: true
+    ncompra:
+      type: string(200)
+      notnull: true
+    factcompra:
+      type: string(200)
+      notnull: true
+    factgasto:
+      type: string(200)
+      notnull: true
+    ordencompra:
+      type: string(200)
+      notnull: true
+    coticompra:
+      type: string(200)
+      notnull: true
+    rif:
+      type: string(20)
+      notnull: true
+    cod_coorpotulipa:
+      type: string(20)
+      notnull: false
+    direccion:
+      type: string(200)
+      notnull: true
+    telefono:
+      type: string(200)
+      notnull: true
+    email:
+      type: string(200)
+      notnull: true
+    tipo:
+      type: tinyint
+      notnull: true
+    iva:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+      default: 0
+    tasa:
+      type: string(20)
+      notnull: true
+      default: "T01"
+    venc_registro_comercio:
+      type: date(25)
+      notnull: false
+    venc_rif:
+      type: date(25)
+      notnull: false
+    venc_bomberos:
+      type: date(25)
+      notnull: false
+    venc_lic_funcionamiento:
+      type: date(25)
+      notnull: false
+    venc_uso_conforme:
+      type: date(25)
+      notnull: false
+    venc_permiso_sanitario:
+      type: date(25)
+      notnull: false
+    venc_permiso_instalacion:
+      type: date(25)
+      notnull: false
+    venc_destinado_afines:
+      type: date(25)
+      notnull: false
+    venc_destinado_abastos:
+      type: date(25)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Oferta:
+      local: id
+      foreign: empresa_id
+      type: many
+    Inventario:
+      local: id
+      foreign: empresa_id
+      type: many
+    InvDeposito:
+      local: id
+      foreign: empresa_id
+      type: many
+    Cliente:
+      local: id
+      foreign: empresa_id
+      type: many
+    Factura:
+      local: id
+      foreign: empresa_id
+      type: many
+    NotaEntrega:
+      local: id
+      foreign: empresa_id
+      type: many
+    User:
+      class: sfGuardUser
+      local: empresa_id
+      foreign: user_id
+      refClass: EmpresaUser
+      foreignAlias: Empresa
+    ReciboPago:
+      local: id
+      foreign: empresa_id
+      type: many
+    Retenciones:
+      local: id
+      foreign: empresa_id
+      type: many
+    NotaCredito:
+      local: id
+      foreign: empresa_id
+      type: many
+    Otros:
+      local: id
+      foreign: empresa_id
+      type: many
+    ServerConf:
+      local: id
+      foreign: empresa_id
+      type: many
+    Traslado:
+      local: id
+      foreign: empresa_desde
+      type: many
+    Traslado2:
+      local: id
+      foreign: empresa_hasta
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+EmpresaUser:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    user_id:
+      type: integer
+      primary: true
+  relations:
+    Empresa:
+      class: Empresa
+      local: empresa_id
+      onDelete: CASCADE
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+Kardex:
+  connection: doctrine
+  tableName: kardex
+  columns:
+    id:
+      type: string(20)
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true    
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    tabla:
+      type: string(20)
+      notnull: true
+    tabla_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: timestamp
+      notnull: true
+    cantidad:
+      type: integer(4)
+      notnull: true
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    tipo:
+      type: tinyint
+      notnull: true  
+    concepto:
+      type: string(200)
+      notnull: true
+    lote:
+      type: string(200)
+      notnull: null
+    fvenc:
+      type: string(200)
+      notnull: null    
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    User:
+      class: sfGuardUser
+      local: user_id
+      type: one
+Cliente:
+  connection: doctrine
+  tableName: cliente
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    full_name:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      unique: false
+      notnull: true
+    sicm:
+      type: string(20)
+      notnull: false
+    zona:
+      type: string(20)
+      notnull: false
+    direccion:
+      type: string()
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    celular:
+      type: string(20)
+      notnull: false
+    email:
+      type: string(100)
+      notnull: false
+    tipo_precio:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    dias_credito:
+      type: integer(1)
+      default: 0
+      unsigned: true
+      notnull: true
+    activo:
+      type: boolean
+      notnull: true
+      default: true
+    descripcion:
+      type: string()
+      notnull: false
+    vendedor_01:
+      type: integer
+      notnull: false
+    vendedor_01_profit:
+      type: string(20)
+      notnull: false
+    vendedor_02:
+      type: integer
+      notnull: false
+    vendedor_02_profit:
+      type: string(20)
+      notnull: false
+  relations:
+    Comisiones:
+      local: id
+      foreign: cliente_id
+      type: many
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Factura:
+      local: id
+      foreign: cliente_id
+      type: many
+    NotaEntrega:
+      local: id
+      foreign: cliente_id
+      type: many
+    ReciboPago:
+      local: id
+      foreign: cliente_id
+      type: many
+    Retenciones:
+      local: id
+      foreign: cliente_id
+      type: many
+    NotaCredito:
+      local: id
+      foreign: cliente_id
+      type: many
+    User:
+      class: sfGuardUser
+      foreignType: one
+      onDelete: CASCADE
+      local: vendedor_01
+      foreign: id
+    User2:
+      class: sfGuardUser
+      foreignType: one
+      onDelete: CASCADE
+      local: vendedor_02
+      foreign: id
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Otros:
+  connection: doctrine
+  tableName: otros
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    nombre:
+      type: string(200)
+      notnull: true
+    valor:
+      type: string(200)
+      notnull: true
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Proveedor:
+  connection: doctrine
+  tableName: proveedor
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    full_name:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      unique: true
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    celular:
+      type: string(20)
+      notnull: false
+    email:
+      type: string(100)
+      notnull: false
+    tipo:
+      type: string(20)
+      notnull: false
+    activo:
+      type: boolean
+      notnull: true
+      default: false
+    descripcion:
+      type: string()
+      notnull: false
+  actAs:
+    Timestampable: ~
+    Signable: ~
+ProdVendidos:
+  connection: doctrine
+  tableName: prod_vendidos
+  columns:
+    id:
+      type: string(20)
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true    
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    tabla:
+      type: string(20)
+      notnull: true
+    tabla_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: timestamp
+      notnull: true
+    cantidad:
+      type: integer(4)
+      notnull: true
+    oferta:
+      type: boolean
+      notnull: true
+    anulado:
+      type: boolean
+      notnull: true
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    User:
+      class: sfGuardUser
+      local: user_id
+      type: one
+ProdComprados:
+  connection: doctrine
+  tableName: prod_comprados
+  columns:
+    id:
+      type: string(20)
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true    
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    tabla:
+      type: string(20)
+      notnull: true
+    tabla_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: timestamp
+      notnull: true
+    cantidad:
+      type: integer(4)
+      notnull: true
+    oferta:
+      type: boolean
+      notnull: true
+    anulado:
+      type: boolean
+      notnull: true
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    User:
+      class: sfGuardUser
+      local: user_id
+      type: one
+Factura:
+  connection: doctrine
+  tableName: factura
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    fecha:
+      type: date(25)
+      notnull: true
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    nota_entrega_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    orden_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    caja_id:
+      type: integer(4)
+      unsigned: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    direccion_entrega:
+      type: string()
+      notnull: false
+    ncontrol:
+      type: string(20)
+      notnull: false
+    num_factura:
+      type: string(20)
+      notnull: false
+    num_fact_fiscal:
+      type: string(20)
+      notnull: false
+    codigof:
+      type: string(20)
+      notnull: false
+    ndespacho:
+      type: string(20)
+      notnull: false
+    forma_pago:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    iva:
+      type: string(20)
+      notnull: true
+    base_imponible:
+      type: string(20)
+      notnull: true
+    iva_monto:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    total2:
+      type: string(20)
+      notnull: false
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    has_invoice:
+      type: boolean
+      notnull: true
+      default: true
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    NotaEntrega:
+      local: nota_entrega_id
+      foreign: id
+      type: one
+    OrdenCompra:
+      local: orden_compra_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    FacturaDet:
+      local: id
+      foreign: factura_id
+      type: many
+    CuentasCobrar:
+      local: id
+      foreign: factura_id
+      type: many
+    Caja:
+      local: caja_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+FacturaDet:
+  connection: doctrine
+  tableName: factura_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    factura_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: true
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+  relations:
+    Factura:
+      local: factura_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+NotaEntrega:
+  connection: doctrine
+  tableName: nota_entrega
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    fecha:
+      type: date(25)
+      notnull: true
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    direccion_entrega:
+      type: string()
+      notnull: false
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    forma_pago:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    iva:
+      type: string(20)
+      notnull: true
+    base_imponible:
+      type: string(20)
+      notnull: true
+    iva_monto:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    CuentasCobrar:
+      local: id
+      foreign: nota_entrega_id
+      type: many
+    Factura:
+      local: id
+      foreign: nota_entrega_id
+      type: many
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    NotaEntregaDet:
+      local: id
+      foreign: nota_entrega_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+NotaEntregaDet:
+  connection: doctrine
+  tableName: nota_entrega_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nota_entrega_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: true
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+  relations:
+    NotaEntrega:
+      local: nota_entrega_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+CuentasCobrar:
+  connection: doctrine
+  tableName: cuentas_cobrar
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    fecha:
+      type: date(25)
+      notnull: true
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    factura_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    nota_entrega_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    total:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Retenciones:
+      local: id
+      foreign: cuentas_cobrar_id
+      type: many
+    ReciboPago:
+      local: id
+      foreign: cuentas_cobrar_id
+      type: many
+    NotaCreditoDet:
+      local: id
+      foreign: cuentas_cobrar_id
+      type: many
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    Factura:
+      local: factura_id
+      foreign: id
+      type: one
+    NotaEntrega:
+      local: nota_entrega_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+ReciboPago:
+  connection: doctrine
+  tableName: recibo_pago
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cuentas_cobrar_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    moneda:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    forma_pago_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    num_recibo:
+      type: string(20)
+      notnull: false
+    fecha:
+      type: date(25)
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    monto2:
+      type: string(20)
+      notnull: false
+    quien_paga:
+      type: string(200)
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+  relations:
+    CuentasCobrar:
+      local: cuentas_cobrar_id
+      foreign: id
+      type: one
+    FormaPago:
+      local: forma_pago_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+FormaPago:
+  connection: doctrine
+  tableName: forma_pago
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    moneda:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    nombre:
+      type: string(200)
+      notnull: true
+    acronimo:
+      type: string(20)
+      notnull: true
+    activo:
+      type: boolean
+      notnull: true
+      default: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    ReciboPago:
+      local: id
+      foreign: forma_pago_id
+      type: many
+    NotaCredito:
+      local: id
+      foreign: forma_pago_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Retenciones:
+  connection: doctrine
+  tableName: retenciones
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cuentas_cobrar_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: date(25)
+      notnull: true
+    comprobante:
+      type: string(20)
+      notnull: true
+    base_imponible:
+      type: string(20)
+      notnull: false
+    iva_impuesto:
+      type: string(20)
+      notnull: false
+    monto:
+      type: string(20)
+      notnull: true
+    monto_usd:
+      type: string(20)
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    tipo:
+      type: integer(1)
+      unsigned: true
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+  relations:
+    CuentasCobrar:
+      local: cuentas_cobrar_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+NotaCredito:
+  connection: doctrine
+  tableName: nota_credito
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    moneda:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    forma_pago_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    num_recibo:
+      type: string(20)
+      notnull: false
+    fecha:
+      type: date(25)
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    quien_paga:
+      type: string(200)
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    FormaPago:
+      local: forma_pago_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    NotaCreditoDet:
+      local: id
+      foreign: nota_credito_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+NotaCreditoDet:
+  connection: doctrine
+  tableName: nota_credito_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nota_credito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cuentas_cobrar_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+  relations:
+    NotaCredito:
+      local: nota_credito_id
+      foreign: id
+      type: one
+    CuentasCobrar:
+      local: cuentas_cobrar_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Traslado:
+  connection: doctrine
+  tableName: traslado
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    empresa_desde:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_desde:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    empresa_hasta:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_hasta:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    monto:
+      type: string(20)
+      notnull: false
+  relations:
+    InvDeposito:
+      local: deposito_desde
+      foreign: id
+      type: one
+    InvDeposito2:
+      class: InvDeposito
+      foreignType: one
+      onDelete: RESTRICT
+      local: deposito_hasta
+      foreign: id
+    TrasladoDet:
+      local: id
+      foreign: traslado_id
+      type: many
+    Empresa:
+      local: empresa_desde
+      foreign: id
+      type: one
+    Empresa2:
+      class: Empresa
+      foreignType: one
+      onDelete: RESTRICT
+      local: empresa_hasta
+      foreign: id
+  actAs:
+    Timestampable: ~
+    Signable: ~
+TrasladoDet:
+  connection: doctrine
+  tableName: traslado_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    traslado_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    inv_destino_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    qty_dest:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    inv_desglose_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    qty_dest_desglose:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+  relations:
+    Traslado:
+      local: traslado_id
+      foreign: id
+      type: one
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    Inventario2:
+      class: Inventario
+      foreignType: one
+      onDelete: RESTRICT
+      local: inv_destino_id
+      foreign: id
+    Inventario3:
+      class: Inventario
+      foreignType: one
+      onDelete: RESTRICT
+      local: inv_desglose_id
+      foreign: id
+InvAjuste:
+  connection: doctrine
+  tableName: inv_ajuste
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    total:
+      type: string(20)
+      notnull: true
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    InvAjusteDet:
+      local: id
+      foreign: inv_ajuste_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+InvAjusteDet:
+  connection: doctrine
+  tableName: inv_ajuste_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    inv_ajuste_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    inventario_det_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    tipo:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+      default: 1
+    fecha_venc:
+      type: date(25)
+      notnull: true
+    lote:
+      type: string(200)
+      notnull: true
+    devolucion:
+      type: string(200)
+      notnull: false
+  relations:
+    InvAjuste:
+      local: inv_ajuste_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    InventarioDet:
+      local: inventario_det_id
+      foreign: id
+      type: one
+InvEntrada:
+  connection: doctrine
+  tableName: inv_entrada
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    total:
+      type: string(20)
+      notnull: true
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    InvEntradaDet:
+      local: id
+      foreign: inv_entrada_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+InvEntradaDet:
+  connection: doctrine
+  tableName: inv_entrada_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    inv_entrada_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha_venc:
+      type: date(25)
+      notnull: true
+    lote:
+      type: string(200)
+      notnull: true
+  relations:
+    InvEntrada:
+      local: inv_entrada_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+InvSalida:
+  connection: doctrine
+  tableName: inv_salida
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    total:
+      type: string(20)
+      notnull: true
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    InvSalidaDet:
+      local: id
+      foreign: inv_salida_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+InvSalidaDet:
+  connection: doctrine
+  tableName: inv_salida_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    inv_salida_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    devolucion:
+      type: string(200)
+      notnull: false
+  relations:
+    InvSalida:
+      local: inv_salida_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+AlmacenTransito:
+  connection: doctrine
+  tableName: almacen_transito
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    factura_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    nota_entrega_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    traslado_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    fecha_embalaje:
+      type: string(20)
+      notnull: false
+    fecha_despacho:
+      type: string(20)
+      notnull: false
+    tipo:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    boxes:
+      type: string()
+      notnull: false
+    precinto:
+      type: string()
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    Factura:
+      local: factura_id
+      foreign: id
+      type: one
+    NotaEntrega:
+      local: nota_entrega_id
+      foreign: id
+      type: one
+    Traslado:
+      local: traslado_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+Banners:
+  connection: doctrine
+  tableName: banners
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    posicion:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    orden:
+      type: integer(1)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    enlace:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    url_imagen:
+      type: string(200)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Galeria:
+  connection: doctrine
+  tableName: galeria
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    posicion:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    texto:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    orden:
+      type: integer(1)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    enlace:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    url_imagen:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Contactenos:
+  connection: doctrine
+  tableName: contactenos
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    email:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mensaje:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    estatus:
+      type: boolean
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      default: '0'
+      autoincrement: false
+  actAs:
+    Timestampable: ~
+Carrito:
+  connection: doctrine
+  tableName: carrito
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    sf_guard_user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    cantidad:
+      type: string(100)
+      unsigned: false
+      notnull: true
+  relations:
+    User:
+      class: sfGuardUser
+      foreignType: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+OrdenCompra:
+  connection: doctrine
+  tableName: orden_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    orden_compra_estatus_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    titulo:
+      type: string(200)
+      notnull: false
+    total:
+      type: string(20)
+      notnull: false
+  relations:
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    OrdenCompraDet:
+      local: id
+      foreign: orden_compra_id
+      type: many
+    OrdenCompraEstatus:
+      local: orden_compra_estatus_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+OrdenCompraDet:
+  connection: doctrine
+  tableName: orden_compra_det
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    orden_compra_id:
+      type: integer(4)
+      unsigned: true
+    qty:
+      type: string(200)
+      notnull: true
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+  relations:
+    Orders:
+      local: orders_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+OrdenCompraEstatus:
+  connection: doctrine
+  tableName: orden_compra_estatus
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(200)
+      notnull: true
+  relations:
+    OrdenCompra:
+      local: id
+      foreign: orden_compra_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Caja:
+  connection: doctrine
+  tableName: caja
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true  
+    nombre:
+      type: string(200)
+      notnull: true
+      default: false
+    tipo:
+      type: boolean
+      notnull: true
+      default: false
+    status:
+      type: boolean
+      notnull: true
+      default: false
+    fecha:
+      type: date
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    User:
+      class: sfGuardUser
+      refClass: CajaUser
+      local: caja_id
+      foreign: user_id
+      foreignAlias: Caja
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Factura:
+      local: id
+      foreign: caja_id
+      type: many
+    CajaDet:
+      local: id
+      foreign: caja_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+CajaDet:
+  connection: doctrine
+  tableName: caja_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    caja_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    sf_guard_user_id:
+      type: integer
+      notnull: true
+      unique: false
+    fecha:
+      type: timestamp
+      notnull: true
+    status:
+      type: boolean
+      notnull: true
+      default: false
+    fondo:
+      type: string(20)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Caja:
+      local: caja_id
+      foreign: id
+      type: one
+CajaCorte:
+  connection: doctrine
+  tableName: caja_corte
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    caja_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    sf_guard_user_id:
+      type: integer
+      notnull: true
+      unique: false
+    tipo:
+      type: boolean
+      notnull: true
+      default: false
+    fecha_ini:
+      type: timestamp
+      notnull: true
+    fecha_fin:
+      type: timestamp
+      notnull: true
+    ult_repz:
+      type: string(5)
+      notnull: false
+    fecha_repz:
+      type: string(6)
+      notnull: false
+    hora_repz:
+      type: string(4)
+      notnull: false
+    ult_fact:
+      type: string(8)
+      notnull: false
+    fecha_ult_fact:
+      type: string(8)
+      notnull: false
+    hora_ult_fact:
+      type: string(4)
+      notnull: false
+    ult_nc:
+      type: string(8)
+      notnull: false
+    exento_fact:
+      type: string(18)
+      notnull: false
+    base_impt1_fact:
+      type: string(18)
+      notnull: false
+    iva_t1_fact:
+      type: string(18)
+      notnull: false
+    exento_nc:
+      type: string(18)
+      notnull: false
+    base_impt1_nc:
+      type: string(18)
+      notnull: false
+    iva_t1_nc:
+      type: string(18)
+      notnull: false
+    codigof:
+      type: string(20)
+      notnull: false
+    cant_fact:
+      type: integer(3)
+      unsigned: true
+      notnull: false
+    cant_nc:
+      type: integer(3)
+      unsigned: true
+      notnull: false
+  relations:
+    Caja:
+      local: caja_id
+      foreign: id
+      type: one
+CajaUser:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  actAs: [Timestampable]
+  columns:
+    caja_id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    user_id:
+      type: integer
+      primary: true
+  relations:
+    Caja:
+      class: Caja
+      local: caja_id
+      onDelete: CASCADE
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+CajaCola:
+  connection: doctrine
+  tableName: caja_cola
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    caja_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha_hr:
+      type: timestamp
+      notnull: true
+  relations:
+    Caja:
+      local: caja_id
+      foreign: id
+      type: one      
+Devolver:
+  connection: doctrine
+  tableName: devolver
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    factura_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    num_nota_credito:
+      type: string(20)
+      notnull: false
+    codigof:
+      type: string(20)
+      notnull: false
+    cliente_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: date
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Factura:
+      local: factura_id
+      foreign: id
+      type: one
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+    DevolverDet:
+      local: id
+      foreign: devolver_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+DevolverDet:
+  connection: doctrine
+  tableName: devolver_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    devolver_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    oferta_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: true
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+  relations:
+    Devolver:
+      local: devolver_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+    Oferta:
+      local: oferta_id
+      foreign: id
+      type: one
+FacturaCompra:
+  connection: doctrine
+  tableName: factura_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    fecha:
+      type: date(25)
+      notnull: true
+    fecha_recepcion:
+      type: date(25)
+      notnull: true
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    deposito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ordenes_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+    num_factura:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    iva:
+      type: string(20)
+      notnull: true
+    base_imponible:
+      type: string(20)
+      notnull: true
+    iva_monto:
+      type: string(20)
+      notnull: true
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    total2:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    estatus_oc:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    sumar_inv:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    libro_compras:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    InvDeposito:
+      local: deposito_id
+      foreign: id
+      type: one
+    FacturaCompraDet:
+      local: id
+      foreign: factura_compra_id
+      type: many
+    CuentasPagar:
+      local: id
+      foreign: factura_compra_id
+      type: many
+    OrdenesCompra:
+      local: ordenes_compra_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+FacturaCompraDet:
+  connection: doctrine
+  tableName: factura_compra_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    factura_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    qtyr:
+      type: string(20)
+      notnull: true
+      default: 0
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_unit_bs:
+      type: string(20)
+      notnull: false
+    price_calculado:
+      type: string(20)
+      notnull: true
+    price_unit_old:
+      type: string(20)
+      notnull: false
+    util_old:
+      type: string(20)
+      notnull: false
+    util_new:
+      type: string(20)
+      notnull: false
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: false
+    fecha_venc:
+      type: date(25)
+      notnull: true
+    lote:
+      type: string(200)
+      notnull: true
+    tipo_precio:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    FacturaCompra:
+      local: factura_compra_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+FacturaGastos:
+  connection: doctrine
+  tableName: factura_gastos
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    gastos_tipo_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    tipo:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    fecha:
+      type: date(25)
+      notnull: true
+    fecha_recepcion:
+      type: date(25)
+      notnull: true
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+    num_factura:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    iva:
+      type: string(20)
+      notnull: true
+    base_imponible:
+      type: string(20)
+      notnull: true
+    iva_monto:
+      type: string(20)
+      notnull: true
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    total2:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    libro_compras:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    GastosTipo:
+      local: gastos_tipo_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    FacturaGastosDet:
+      local: id
+      foreign: factura_gastos_id
+      type: many
+    CuentasPagar:
+      local: id
+      foreign: factura_gastos_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+FacturaGastosDet:
+  connection: doctrine
+  tableName: factura_gastos_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    factura_gastos_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    exento:
+      type: string(20)
+      notnull: false
+    descripcion:
+      type: string()
+      notnull: true
+  relations:
+    FacturaGastos:
+      local: factura_gastos_id
+      foreign: id
+      type: one
+GastosTipo:
+  connection: doctrine
+  tableName: gastos_tipo
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(200)
+      notnull: true
+      unique: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    FacturaGastos:
+      local: id
+      foreign: gastos_tipo_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+OrdenesCompra:
+  connection: doctrine
+  tableName: ordenes_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true  
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true   
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cotizacion_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one   
+    OrdenesCompraDet:
+      local: id
+      foreign: ordenes_compra_id
+      type: many
+    CotizacionCompra:
+      local: cotizacion_compra_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+OrdenesCompraDet:
+  connection: doctrine
+  tableName: ordenes_compra_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    ordenes_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true    
+    price_tot:
+      type: string(20)
+      notnull: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+  relations:
+    OrdenesCompra:
+      local: ordenes_compra_id
+      foreign: id
+      type: one
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+CotizacionCompra:
+  connection: doctrine
+  tableName: cotizacion_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true  
+    dias_credito:
+      type: string(4)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true   
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    razon_social:
+      type: string(200)
+      notnull: true
+    doc_id:
+      type: string(20)
+      notnull: true
+    telf:
+      type: string(20)
+      notnull: true
+    direccion:
+      type: string()
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    descuento:
+      type: string(20)
+      notnull: true
+      default: 0
+    subtotal:
+      type: string(20)
+      notnull: true
+    subtotal_desc:
+      type: string(20)
+      notnull: true
+    total:
+      type: string(20)
+      notnull: true
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one   
+    CotizacionCompraDet:
+      local: id
+      foreign: cotizacion_compra_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+CotizacionCompraDet:
+  connection: doctrine
+  tableName: cotizacion_compra_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    cotizacion_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true    
+    price_tot:
+      type: string(20)
+      notnull: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+  relations:
+    CotizacionCompra:
+      local: cotizacion_compra_id
+      foreign: id
+      type: one
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+CuentasPagar:
+  connection: doctrine
+  tableName: cuentas_pagar
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    fecha:
+      type: date(25)
+      notnull: true
+    fecha_recepcion:
+      type: date(25)
+      notnull: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    factura_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    factura_gastos_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    total:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    monto_pagado:
+      type: string(20)
+      notnull: false
+    total_bs:
+      type: string(20)
+      notnull: false
+    monto_faltante_bs:
+      type: string(20)
+      notnull: false
+    monto_pagado_bs:
+      type: string(20)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    FacturaCompra:
+      local: factura_compra_id
+      foreign: id
+      type: one
+    FacturaGastos:
+      local: factura_gastos_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+Inexistencia:
+  connection: doctrine
+  tableName: inexistencia
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(100)
+      notnull: true
+    sf_guard_user_id:
+      type: integer
+      notnull: true
+      unique: false
+    fecha:
+      type: date(25)
+      notnull: true
+ReciboPagoCompra:
+  connection: doctrine
+  tableName: recibo_pago_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cuentas_pagar_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    moneda:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    forma_pago_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    banco_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    num_recibo:
+      type: string(20)
+      notnull: false
+    fecha:
+      type: date(25)
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    monto2:
+      type: string(20)
+      notnull: false
+    quien_paga:
+      type: string(200)
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+  relations:
+    CuentasPagar:
+      local: cuentas_pagar_id
+      foreign: id
+      type: one
+    FormaPago:
+      local: forma_pago_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    Banco:
+      local: banco_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+NotaDebito:
+  connection: doctrine
+  tableName: nota_debito
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    ncontrol:
+      type: string(20)
+      notnull: false
+      unique: false
+    moneda:
+      type: tinyint
+      unsigned: true
+      notnull: true
+    forma_pago_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    num_recibo:
+      type: string(20)
+      notnull: false
+    fecha:
+      type: date(25)
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    monto_faltante:
+      type: string(20)
+      notnull: false
+    quien_paga:
+      type: string(200)
+      notnull: true
+    url_imagen:
+      type: string(200)
+      notnull: false
+    tasa_cambio:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    libro_compras:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+  relations:
+    FormaPago:
+      local: forma_pago_id
+      foreign: id
+      type: one
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    NotaDebitoDet:
+      local: id
+      foreign: nota_debito_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+NotaDebitoDet:
+  connection: doctrine
+  tableName: nota_debito_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    nota_debito_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    cuentas_pagar_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    monto:
+      type: string(20)
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+    anulado:
+      type: boolean
+      notnull: true
+      default: false
+  relations:
+    NotaDebito:
+      local: nota_debito_id
+      foreign: id
+      type: one
+    CuentasPagar:
+      local: cuentas_pagar_id
+      foreign: id
+      type: one
+  actAs:
+    Timestampable: ~
+    Signable: ~
+DevolverCompra:
+  connection: doctrine
+  tableName: devolver_compra
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    tasa_cambio:
+      type: string(20)
+      notnull: true
+    factura_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    fecha:
+      type: date
+      notnull: true
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    FacturaCompra:
+      local: factura_compra_id
+      foreign: id
+      type: one
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+    DevolverCompraDet:
+      local: id
+      foreign: devolver_compra_id
+      type: many
+  actAs:
+    Timestampable: ~
+    Signable: ~
+DevolverCompraDet:
+  connection: doctrine
+  tableName: devolver_compra_det
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    devolver_compra_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    qty:
+      type: string(20)
+      notnull: true
+      default: 1
+    price_unit:
+      type: string(20)
+      notnull: true
+    price_tot:
+      type: string(20)
+      notnull: true
+    inventario_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    exento:
+      type: string(20)
+      notnull: true
+  relations:
+    DevolverCompra:
+      local: devolver_compra_id
+      foreign: id
+      type: one
+    Inventario:
+      local: inventario_id
+      foreign: id
+      type: one
+Banco:
+  connection: doctrine
+  tableName: banco
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+    nombre:
+      type: string(200)
+      notnull: true
+    num_cuenta:
+      type: string(200)
+      notnull: true
+    gastos_tipo_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    estatus:
+      type: integer(1)
+      default: 1
+      unsigned: true
+      notnull: true
+    descripcion:
+      type: string()
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+    ReciboPagoCompra:
+      local: id
+      foreign: banco_id
+      type: one
+    GastosTipo:
+      local: gastos_tipo_id
+      foreign: id
+      type: one      
+  actAs:
+    Timestampable: ~
+    Signable: ~
+Turnover:
+  connection: doctrine
+  tableName: turnover
+  columns:
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+      primary: true
+    proveedor_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    minimo:
+      type: string(20)
+      notnull: false
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+      onDelete: cascade
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: cascade  
+  actAs:
+    Timestampable: ~
+    Signable: ~
+
+SafetyStockFarmacia:
+  connection: doctrine
+  tableName: safety_stock_farmacia
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    producto_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    demanda_diaria:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    desviacion_estandar:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    punto_reorden_compra:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    safety_stock:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+  relations:
+    Producto:
+      local: producto_id
+      foreign: id
+      type: one
+      onDelete: cascade
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: cascade  
+  actAs:
+    Timestampable: ~
+    Signable: ~
+
+NivelServicio:
+  connection: doctrine
+  tableName: nivel_servicio
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    porcentaje:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    nivel_servicio:
+      type: float
+      unsigned: true
+      notnull: false
+
+SafetyStockFarmaciaConfig:
+  connection: doctrine
+  tableName: safety_stock_farmacia_config
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+    empresa_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    nivel_servicio_id:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    tiempo_entrega:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    dias_analisis:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+    correos_notificacion:
+      type: string(255)
+      unsigned: true
+      notnull: true
+  relations:
+    NivelServicio:
+      local: nivel_servicio_id
+      foreign: id
+      type: one
+      onDelete: cascade
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: cascade  
+  actAs:
+    Timestampable: ~
+    Signable: ~

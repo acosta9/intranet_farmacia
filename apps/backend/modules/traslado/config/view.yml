@@ -1,0 +1,15 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+salidaSuccess:
+  has_layout:     true
+  layout:         layout
+
+procesarSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+printSuccess:
+  has_layout:     true
+  layout:         layout_print

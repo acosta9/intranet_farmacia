@@ -1,0 +1,95 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           caja
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          caja
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[suppventa, confcaj1, confcaj2, confcaj3]]
+        _edit:
+           label: editar
+           credentials: [[suppventa, confcaj1, confcaj2]]
+        _delete:
+           label: eliminar
+           credentials: [[suppventa, confcaj1]]
+        _new:
+           label: nuevo
+           credentials: [[suppventa, confcaj1, confcaj2]]
+        _show:
+           label: mostrar
+           credentials: [[suppventa, confcaj1, confcaj2, confcaj3]]
+        _save:
+           label: guardar
+           credentials: [[suppventa, confcaj1, confcaj2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[suppventa, confcaj1, confcaj2]]
+        _list:
+           label: listado
+           credentials: [[suppventa, confcaj1, confcaj2, confcaj3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[suppventa, confcaj1, confcaj2, confcaj3]]
+      fields:
+        id: {label: Cod}
+        empresa_id: {label: Empresa}
+        company: {label: Empresa, is_real: true}
+        nombre: {label: "Nombre Caja"}
+        tipo: {label: "Es fiscal? "}
+        status: {label: "Abierta? "}
+        estatus: {label: "Estatus "}
+        Estatus: {label: "Abierta? "}
+        TipoImp: {label: "Tipo de Caja", is_real: true}
+        fecha: {label: "Fecha "}
+        user_list: {label: Usuarios Caja}
+        descripcion: {label: Descripcion}
+        created_at: {label: Dia de Creacion}
+        updated_at: {label: Ult. Actualizacion}
+        CreatedByUser: {label: Creado por}
+        created_by: {label: Creado por}
+        UpdatedByUser: {label: Actualizado por}
+        updated_by: {label: Actualizado por}
+      list:
+        title: Cajas nn listado nn caja
+        display: [=id, company, =nombre, TipoImp, estatus, fecha, created_at, updated_at]
+        table_method: doSelectJoinOtros
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [empresa_id]
+      form:
+        display:
+          requeridos: [_mask, empresa_id, nombre, tipo, status, fecha, user_list, descripcion]
+      edit:
+        title:   Cajas nn editar nn caja
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Caja nn nuevo nn caja
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Caja nn detalle nn caja
+        display:
+          requeridos: [_mask_show, nombre, TipoImp, estatus, fecha, descripcion]
+          otros:      [CreatedByUser, UpdatedByUser, created_at, updated_at]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

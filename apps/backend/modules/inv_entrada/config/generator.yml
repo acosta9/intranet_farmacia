@@ -1,0 +1,101 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           InvEntrada
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          inv_entrada
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, entinv1, entinv2, entinv3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, entinv1, entinv2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, entinv1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, entinv1, entinv2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, entinv1, entinv2, entinv3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, entinv1, entinv2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, entinv1, entinv2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, entinv1, entinv2, entinv3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, entinv1, entinv2, entinv3]]
+        _add_item:
+           label: agregar item
+           credentials: [[farmacia, entinv1, entinv2]]
+        _reporteFirst:
+           label: REPORTE DE ENTRADA INV.
+           target: _blank
+           credentials: [[farmacia, entinv1, entinv2, entinv3]]
+      fields:
+        empresa_id: {label: Empresa}
+        deposito_id: {label: Deposito}
+        EmpresaName: {label: Empresa, is_real: true}
+        DepositoName: {label: Deposito, is_real: true}
+        anulado: {label: Estatus}
+        Estatus: {label: Estatus, is_real: true}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado, is_real: true}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        company: {label: Empresa, is_real: true}
+        id: {label: Codigo, is_real: true}
+      list:
+        title: Entrada de Inv. nn listado nn inventario
+        display: [id, company, DepositoName, _descripcion, created_at, _anulado]
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        sort: [updated_at, desc]
+        batch_actions:
+          _reporteFirst: ~
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Entrada de Inv. nn ajuste nn inv_entrada
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Entrada de Inv. nn nuevo nn inv_entrada
+        actions:
+          _list: ~
+          _add_item: ~
+          _save: ~
+      show:
+        title:   Entrada de Inv. nn detalle nn inv_entrada
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

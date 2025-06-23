@@ -1,0 +1,666 @@
+2020-09-05T16:02:24+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:26+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:28+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:31+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:35+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:36+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:38+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:39+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:45+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:46+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:47+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:49+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:50+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:54+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:55+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:02:58+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:05+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:05+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:14+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:22+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:30+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:31+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:34+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:35+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:03:53+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:04:12+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:00+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:01+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:05+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:06+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:09+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:10+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:14+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:24+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:24+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:25+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:29+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:32+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:37+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:47+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:07:54+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:08:31+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:08:45+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(333): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(289): safe_svg->skip_svg_regeneration()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-admin/includes/image.php(631): apply_filters()
+#4 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(904): wp_generate_attachment_metadata()
+#5 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(598): WOODCORE_Import->process_attachment()
+#6 /var/www/html/wordpress/wp-content/plugins/woodmart-core/importer/wordpress-importer.php(103): WOODCORE_Import->process_posts()
+#7 /var/www/html/wordpress/wp-content/themes/woodmart/inc/classes/Importversion.php(184): WOODCORE_Import->import()
+#8  in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:32:52+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:32:56+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:36:35+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:36:43+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:36:49+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:55:54+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:55:58+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:56:47+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:57:36+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-05T16:57:39+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/wordpress/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/wordpress/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/wordpress/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/wordpress/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/wordpress/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/wordpress/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/wordpress/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/wordpress/wp-content/plugins/safe-svg/safe-svg.php on line 424
+

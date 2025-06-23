@@ -1,0 +1,15 @@
+dashCompras:
+  is_secure: true
+  credentials:  [dashboard_compras]
+dashIncidenciasInv:
+  is_secure: true
+  credentials:  [dashboard_compras]
+Incidencias:
+  is_secure: true
+  credentials:  [dashboard_compras]
+dashFarmacia:
+  is_secure: true
+  credentials:  [dashboard_farmacia]
+dashGerencia:
+  is_secure: true
+  credentials:  [dashboard_gerencia]

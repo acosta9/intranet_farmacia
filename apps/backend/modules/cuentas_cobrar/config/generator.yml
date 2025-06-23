@@ -1,0 +1,90 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CuentasCobrar
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          cuentas_cobrar
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[sysadmin, cuecob1, cuecob2, cuecob3]]
+        _edit:
+           label: editar
+           credentials: [[sysadmin, cuecob1, cuecob2]]
+        _delete:
+           label: eliminar
+           credentials: [[sysadmin, cuecob1]]
+        _new:
+           label: nuevo
+           credentials: [[sysadmin, cuecob1, cuecob2]]
+        _show:
+           label: mostrar
+           credentials: [[sysadmin, cuecob1, cuecob2, cuecob3]]
+        _save:
+           label: guardar
+           credentials: [[sysadmin, cuecob1, cuecob2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[sysadmin, cuecob1, cuecob2]]
+        _list:
+           label: listado
+           credentials: [[sysadmin, cuecob1, cuecob2, cuecob3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[sysadmin, cuecob1, cuecob2, cuecob3]]
+      fields:
+        doc: {label: Documento}
+        empresaName: {label: Empresa, is_real: true}
+        clienteName: {label: Razon Social, is_real: true}
+        Rif: {label: Rif, is_real: true}
+        total: {label: Total}
+        monto_faltante: {label: Restante}
+        monto_pagado: {label: Pagado}
+        estatus: {label: Estatus}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        CreatedAtTxt: {label: Fecha, is_real: true}
+        dias: {label: D. Mora}
+      list:
+        table_method: doSelectJoinOtros
+        title: Cuentas por cobrar nn listado nn cuentas_cobrar
+        display: [empresaName, clienteName, _total, _monto_faltante, _monto_pagado, _estatus, _doc, _dias]
+        sort: [created_at, desc]
+        batch_actions: {}
+        actions: {}
+      filter:
+        display: [_mask_filter, created_at, updated_at]
+      form:
+        display:
+          requeridos: [moneda, nombre, acronimo, activo, descripcion, _mask]
+      edit:
+        title:   Cuentas por cobrar nn editar nn cuentas_cobrar
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Cuentas por cobrar nn nuevo nn cuentas_cobrar
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Cuentas por cobrar nn detalle nn cuentas_cobrar
+        display:
+          requeridos: [coin, nombre, acronimo, estatus, descripcion]
+          otros:      [Creator, Updator, created_at, updated_at]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

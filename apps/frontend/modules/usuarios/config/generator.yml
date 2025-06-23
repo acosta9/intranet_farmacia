@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        password: {label: New password}
+        password_again: {label: Re-enter new password}
+      list:  ~
+      filter: ~
+      form:
+        class: sfGuardUserAdminForm
+        display: [first_name, email_address, password, password_again]
+      edit:
+        title:   Change Password
+      show:         ~

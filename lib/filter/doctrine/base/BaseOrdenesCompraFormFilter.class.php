@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * OrdenesCompra filter form base class.
+ *
+ * @package    ired.localhost
+ * @subpackage filter
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
+ */
+abstract class BaseOrdenesCompraFormFilter extends BaseFormFilterDoctrine
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'dias_credito'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'empresa_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => true)),
+      'proveedor_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Proveedor'), 'add_empty' => true)),
+      'cotizacion_compra_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('CotizacionCompra'), 'add_empty' => true)),
+      'razon_social'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'doc_id'               => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'telf'                 => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'direccion'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'ncontrol'             => new sfWidgetFormFilterInput(),
+      'tasa_cambio'          => new sfWidgetFormFilterInput(),
+      'descuento'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'subtotal'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'subtotal_desc'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'total'                => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'estatus'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'created_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'created_by'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
+      'updated_by'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'dias_credito'         => new sfValidatorPass(array('required' => false)),
+      'empresa_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Empresa'), 'column' => 'id')),
+      'proveedor_id'         => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Proveedor'), 'column' => 'id')),
+      'cotizacion_compra_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('CotizacionCompra'), 'column' => 'id')),
+      'razon_social'         => new sfValidatorPass(array('required' => false)),
+      'doc_id'               => new sfValidatorPass(array('required' => false)),
+      'telf'                 => new sfValidatorPass(array('required' => false)),
+      'direccion'            => new sfValidatorPass(array('required' => false)),
+      'ncontrol'             => new sfValidatorPass(array('required' => false)),
+      'tasa_cambio'          => new sfValidatorPass(array('required' => false)),
+      'descuento'            => new sfValidatorPass(array('required' => false)),
+      'subtotal'             => new sfValidatorPass(array('required' => false)),
+      'subtotal_desc'        => new sfValidatorPass(array('required' => false)),
+      'total'                => new sfValidatorPass(array('required' => false)),
+      'estatus'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'created_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'created_by'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Creator'), 'column' => 'id')),
+      'updated_by'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Updator'), 'column' => 'id')),
+    ));
+
+    $this->widgetSchema->setNameFormat('ordenes_compra_filters[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    $this->setupInheritance();
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'OrdenesCompra';
+  }
+
+  public function getFields()
+  {
+    return array(
+      'id'                   => 'Number',
+      'dias_credito'         => 'Text',
+      'empresa_id'           => 'ForeignKey',
+      'proveedor_id'         => 'ForeignKey',
+      'cotizacion_compra_id' => 'ForeignKey',
+      'razon_social'         => 'Text',
+      'doc_id'               => 'Text',
+      'telf'                 => 'Text',
+      'direccion'            => 'Text',
+      'ncontrol'             => 'Text',
+      'tasa_cambio'          => 'Text',
+      'descuento'            => 'Text',
+      'subtotal'             => 'Text',
+      'subtotal_desc'        => 'Text',
+      'total'                => 'Text',
+      'estatus'              => 'Number',
+      'created_at'           => 'Date',
+      'updated_at'           => 'Date',
+      'created_by'           => 'ForeignKey',
+      'updated_by'           => 'ForeignKey',
+    );
+  }
+}

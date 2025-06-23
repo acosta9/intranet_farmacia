@@ -1,0 +1,72 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProdVendidos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          prod_vendidos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, suppventa, promasven1, promasven2, promasven3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, suppventa, promasven1, promasven2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, suppventa, promasven1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, suppventa, promasven1, promasven2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, suppventa, promasven1, promasven2, promasven3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, suppventa, promasven1, promasven2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, suppventa, promasven1, promasven2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, suppventa, promasven1, promasven2, promasven3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, suppventa, promasven1, promasven2]]
+        _reporteMasVendidos:
+           label: REPORTE MAS VENDIDOS
+           target: _blank
+           credentials: [[farmacia, suppventa, promasven1, promasven2, promasven3]]
+        _reporteAbc:
+           label: REPORTE ABC
+           target: _blank
+           credentials: [[compra2, promasven1, promasven2, promasven3]]
+      fields:
+        cname: {label: Cliente, is_real: true}
+        emin: {label: Empresa, is_real: true}
+        idname: {label: Deposito, is_real: true}
+        pname: {label: Producto, is_real: true}
+        sname: {label: Serial, is_real: true}
+        qty: {label: Qty, is_real: true}
+        total: {label: Total, is_real: false}
+        unit: {label: Presentacion, is_real: true}
+        fecha: {label: Fecha, tipo: "fecha_two"}
+        oferta: {label: Oferta}
+      list:
+        table_method: doSelectJoinOtros
+        title: Productos mas vendidos nn listado nn prod_vendidos
+        display: [emin, idname, pname, unit, sname, qty, _total, _oferta]
+        sort: [fecha, desc]
+        batch_actions:
+          _reporteMasVendidos: ~
+          _reporteAbc: ~
+        actions: {}
+      filter:
+        display: [_mask_filter, fecha]

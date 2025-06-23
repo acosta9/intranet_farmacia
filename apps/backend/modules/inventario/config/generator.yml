@@ -1,0 +1,119 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Inventario
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          inventario
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+         _index:
+            label: indice
+            credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, inv1, inv2, inv3]]
+         _edit:
+            label: editar
+            credentials: [[farmacia, suppventa, inv1, inv2]]
+         _delete:
+            label: eliminar
+            credentials: [[farmacia, suppventa, inv1]]
+         _new:
+            label: nuevo
+            credentials: [[farmacia, suppventa, inv1, inv2]]
+         _show:
+            label: mostrar
+            credentials: [[farmacia, inv1, inv2, inv3, suppventa, auditorinv, analistai, inventario]]
+         _save:
+            label: guardar
+            credentials: [[farmacia, suppventa, inv1, inv2]]
+         _save_and_add:
+            label: guardar y agregar nuevo
+            credentials: [[farmacia, suppventa, inv1, inv2]]
+         _list:
+            label: listado
+            credentials: [[farmacia, suppventa, auditorinv, inv1, inv2, inv3, analistai, inventario]]
+         _reset:
+            label: borrar filtros
+            credentials: [[farmacia, suppventa, auditorinv, inv1, inv2, inv3, analistai, inventario]]
+         _add_item:
+            label: agregar lote
+            credentials: [[farmacia, suppventa, inv1, inv2]]
+         _reporteFirst:
+            label: REPORTE DE INVENTARIO
+            target: _blank
+            credentials: [[farmacia, suppventa, auditorinv, inv1, inv2, inv3, analistai, inventario]]
+         _reporteSecond:
+           label: REPORTE DE PRECIOS
+           target: _blank
+           credentials: [[farmacia, suppventa, auditorinv, inv1, inv2, inv3, analistai, inventario]]
+         _reporteQty:
+           label: REPORTE DE CANTIDADES TOT.
+           target: _blank
+           credentials: [[farmacia, suppventa, auditorinv, inv1, inv2, inv3, analistai, inventario]]
+      fields:
+        empresa_id: {label: Empresa}
+        deposito_id: {label: Deposito}
+        producto_id: {label: Producto}
+        EmpresaName: {label: Empresa, is_real: true}
+        DepositoName: {label: Deposito, is_real: true}
+        ProductoName: {label: Producto, is_real: true}
+        activo: {label: Estatus}
+        Estatus: {label: Estatus, is_real: true}
+        cantidad: {label: Total Disponible}
+        qty: {label: Qty, is_real: true}
+        limite_stock: {label: Alerta Minimo Stock}
+        limite: {label: Qty min, is_real: true}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        company: {label: Empresa, is_real: true}
+        SerialName: {label: Serial, is_real: true}
+        LabName: {label: Lab, is_real: true}
+        imagen: {label: Img, is_real: true}
+        id: {label: Cod.}
+      list:
+        title: Inventario nn listado nn inventario
+        display: [id, company, DepositoName, _ProductoName, LabName, SerialName, _imagen, _activo, qty]
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        sort: [updated_at, desc]
+        batch_actions:
+          _reporteSecond: ~
+          _reporteQty: ~
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, activo, cantidad, limite_stock, _det]
+      edit:
+        title:   Inventario nn ajuste nn inventario
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Inventario nn nuevo nn inventario
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Inventario nn detalle nn inventario
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+          requeridos: [_mask_show]
+        actions:
+          _list: ~
+          _new: ~

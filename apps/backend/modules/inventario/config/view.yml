@@ -1,0 +1,18 @@
+default:
+  has_layout:     true
+  layout:         layout
+printSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+batchReporteFirstSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+batchReporteSecondSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+batchReporteQtySuccess:
+  has_layout:     true
+  layout:         layout_print

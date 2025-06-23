@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Galeria form base class.
+ *
+ * @method Galeria getObject() Returns the current form's model object
+ *
+ * @package    ired.localhost
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
+ */
+abstract class BaseGaleriaForm extends BaseFormDoctrine
+{
+  public function setup()
+  {
+    $this->setWidgets(array(
+      'id'         => new sfWidgetFormInputHidden(),
+      'nombre'     => new sfWidgetFormInputText(),
+      'posicion'   => new sfWidgetFormInputText(),
+      'texto'      => new sfWidgetFormTextarea(),
+      'orden'      => new sfWidgetFormInputText(),
+      'enlace'     => new sfWidgetFormInputText(),
+      'url_imagen' => new sfWidgetFormInputText(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
+      'created_by' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
+      'updated_by' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
+    ));
+
+    $this->setValidators(array(
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'nombre'     => new sfValidatorString(array('max_length' => 200)),
+      'posicion'   => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+      'texto'      => new sfValidatorString(),
+      'orden'      => new sfValidatorInteger(),
+      'enlace'     => new sfValidatorString(array('max_length' => 200)),
+      'url_imagen' => new sfValidatorString(array('max_length' => 200)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
+      'created_by' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'required' => false)),
+      'updated_by' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'required' => false)),
+    ));
+
+    $this->widgetSchema->setNameFormat('galeria[%s]');
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+
+    $this->setupInheritance();
+
+    parent::setup();
+  }
+
+  public function getModelName()
+  {
+    return 'Galeria';
+  }
+
+}

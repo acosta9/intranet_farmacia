@@ -1,0 +1,7 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+batchReporteFirstSuccess:
+  has_layout:     true
+  layout:         layout_print

@@ -1,0 +1,127 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           OrdenCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          orden_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _edit:
+          label: editar
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _delete:
+          label: eliminar
+          credentials: [[sysadmin, ordven1]]
+        _anular:
+          label: anular
+          credentials: [[sysadmin, ordven1]]
+        _new:
+          label: nuevo
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _show:
+          label: mostrar
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _save:
+          label: guardar
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _list:
+          label: listado
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _print:
+          label: imprimir
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _add_item:
+          label: agregar item
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [[sysadmin, ordven1, ordven2]]
+        _reportePendientes:
+          label: REPORTE PENDIENTES POR COBRAR
+          target: _blank
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+        _reportePrefacturados:
+          label: REPORTE TOTAL PROCESADO
+          target: _blank
+          credentials: [[sysadmin, ordven1, ordven2, ordven3]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° de Control, is_real: true}
+        num_factura: {label: N° de Factura, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        nulo: {label: Anulado, is_real: true}
+        coin: {label: Moneda}
+        pagado: {label: Pagado}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        hasfact: {label: Posee una factura}
+        ename: {label: Empresa, is_real: true}
+        cname: {label: Cliente, is_real: true}
+        estatus: {label: Estatus, is_real: true}
+        id: {label: Cod.}
+      list:
+        title: Ordenes de venta nn listado nn orden_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=id, ename, cname, _created_at, TotalCoin, _estatus]
+        sort: [id, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Ordenes de venta nn editar nn orden_compra
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Ordenes de venta nn nuevo nn orden_compra
+        actions:
+          _list: ~
+          _new: ~
+          _save: ~
+      show:
+        title:   Ordenes de venta nn detalle nn orden_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

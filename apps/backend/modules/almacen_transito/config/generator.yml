@@ -1,0 +1,84 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AlmacenTransito
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          almacen_transito
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[sysadmin, desp1, desp2, desp3]]
+        _edit:
+           label: editar
+           credentials: [[sysadmin, desp1, desp2]]
+        _delete:
+           label: eliminar
+           credentials: [[sysadmin, desp1]]
+        _new:
+           label: nuevo
+           credentials: [[sysadmin, desp1, desp2]]
+        _show:
+           label: mostrar
+           credentials: [[sysadmin, desp1, desp2, desp3]]
+        _save:
+           label: guardar
+           credentials: [[sysadmin, desp1, desp2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[sysadmin, desp1, desp2]]
+        _list:
+           label: listado
+           credentials: [[sysadmin, desp1, desp2, desp3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[sysadmin, desp1, desp2, desp3]]
+      fields:
+        doc: {label: Documento}
+        company: {label: Empresa, is_real: true}
+        deposito: {label: Deposito, is_real: true}
+        clienteName: {label: Destino, is_real: true}
+        Rif: {label: Rif, is_real: true}
+        total: {label: Total}
+        monto_faltante: {label: Restante}
+        monto_pagado: {label: Pagado}
+        estatus: {label: Estatus}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        UpdatedAtTxt: {label: Ult. Actualizacion, is_real: true}
+        tipo: {label: Tipo, is_real: true}
+        id: {label: "Cod"}
+      list:
+        table_method: doSelectJoinOtros
+        title: Embalaje nn listado nn almacen_transito
+        display: [id, company, deposito, clienteName, _estatus, _tipo, _doc, UpdatedAtTxt]
+        sort: [updated_at, desc]
+        batch_actions: {}
+        actions: {}
+      filter:
+        display: [_mask_filter, created_at, updated_at]
+      form:
+        display:
+          requeridos: [moneda, nombre, acronimo, activo, descripcion, _mask]
+      edit:
+        title:   Embalaje nn editar nn almacen_transito
+        actions:
+          _list: ~
+      new:
+        title:   Embalaje nn nuevo nn almacen_transito
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Embalaje nn detalle nn almacen_transito
+        display:
+          header:      [_mask_show]
+        actions:
+          _list: ~

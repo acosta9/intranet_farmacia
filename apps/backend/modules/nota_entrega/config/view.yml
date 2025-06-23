@@ -1,0 +1,11 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+printSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+print2Success:
+  has_layout:     true
+  layout:         layout_print

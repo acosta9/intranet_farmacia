@@ -1,0 +1,82 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardGroup
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_group
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [sysadmin]
+        _edit:
+           label: editar
+           credentials: [sysadmin]
+        _delete:
+           label: eliminar
+           credentials: [sysadmin]
+        _new:
+           label: nuevo
+           credentials: [sysadmin]
+        _show:
+           label: mostrar
+           credentials: [sysadmin]
+        _save:
+           label: guardar
+           credentials: [sysadmin]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [sysadmin]
+        _list:
+           label: regresar
+           credentials: [sysadmin]
+        _reset:
+           label: borrar filtros
+           credentials: [sysadmin]
+      fields:
+        name: {label: Nombre}
+        description: {label: Descripcion}
+        created_at: {label: "Dia de Creacion", tipo: "fecha_two"}
+        updated_at: {label: "Ult. Actualizacion", tipo: "fecha_two"}
+        permissions_list: {label: Permisos}
+        users_list:  {label: Usuarios}
+      list:
+        title:   Grupos nn listado nn sf_guard_group
+        display: [=name, description, created_at, updated_at]
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [name, description, created_at, updated_at, permissions_list, users_list]
+      form:
+        display:
+          "requeridos": [name, description, _blank6, users_list, permissions_list]
+      edit:
+        title:   Grupos nn editar nn sf_guard_group
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Grupos nn nuevo nn sf_guard_group
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Grupos nn detalle nn sf_guard_group
+        display:
+          "grupos": [name, description]
+          otros: [created_at, updated_at]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

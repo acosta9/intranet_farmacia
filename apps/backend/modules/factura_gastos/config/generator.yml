@@ -1,0 +1,123 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           FacturaGastos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          factura_gastos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+        _edit:
+          label: editar
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _delete:
+          label: eliminar
+          credentials: [[cuentaspagar, facgas1]]
+        _anular:
+          label: anular
+          credentials: [[cuentaspagar, facgas1]]
+        _new:
+          label: nuevo
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _show:
+          label: mostrar
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+        _save:
+          label: guardar
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _list:
+          label: listado
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+        _print:
+          label: imprimir
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+        _add_item:
+          label: agregar item
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [[cuentaspagar, facgas1, facgas2]]
+        _reporteGastos:
+          label: REPORTE DE GASTOS
+          target: _blank
+          credentials: [[cuentaspagar, facgas1, facgas2, facgas3]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° Control, is_real: true}
+        num_factura: {label: N° de Factura, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        nulo: {label: Anulado, is_real: true}
+        coin: {label: Moneda}
+        pagado: {label: Pagado}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        hasfact: {label: Posee una factura}
+        company: {label: Empresa, is_real: true}
+        fecha_recepcion: {label: Fecha de recepcion, tipo: "fecha_two"}
+        gastos_tipo_id: {label: Tipo de gasto}
+        Tgastos: {label: Tipo de gasto}
+        tipo: {label: Tipo de Factura}
+        Totalbs: {label: Total Bs, is_real: true}
+        id: {label: Cod.}
+      list:
+        title: Facturas de gastos nn listado nn factura_gastos
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [id, company, razon_social, _tipo, num_factura, _date, TotalCoin, PendienteCoin, _estatus]
+        sort: [id, desc]
+        batch_actions:
+          _reporteGastos: ~
+      filter:
+        display: [_mask_filter, razon_social, doc_id, ncontrol, num_factura, gastos_tipo_id, fecha, fecha_recepcion, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Facturas de gastos nn editar nn factura_gastos
+        actions:
+          _list: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Facturas de gastos nn nuevo nn factura_gastos
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Facturas de gastos nn detalle nn factura_gastos
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~

@@ -1,0 +1,90 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProdLaboratorio
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          prod_laboratorio
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, lab1, lab2, lab3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, lab1, lab2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, lab1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, lab1, lab2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, lab1, lab2, lab3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, lab1, lab2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, lab1, lab2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, lab1, lab2, lab3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, lab1, lab2, lab3]]
+      fields:
+        nombre: {label: Nombre}
+        codigo: {label: Codigo}
+        CodFull: {label: Codigo, is_real: true}
+        descripcion: {label: Acronimo}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+      list:
+        title: Laboratorios nn listado nn prod_laboratorio
+        display: [=nombre, descripcion, created_at, updated_at]
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [nombre, descripcion]
+      form:
+        display:
+          requeridos: [nombre, descripcion, _mask]
+      edit:
+        title:   Laboratorios nn editar nn prod_laboratorio
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Laboratorios nn nuevo nn prod_laboratorio
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Laboratorios nn detalle nn prod_laboratorio
+        display:
+          requeridos: [nombre, descripcion]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

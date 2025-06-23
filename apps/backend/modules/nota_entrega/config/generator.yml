@@ -1,0 +1,118 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           NotaEntrega
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          nota_entrega
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _edit:
+          label: editar
+          credentials: [[sysadmin, notent1, notent2]]
+        _delete:
+          label: eliminar
+          credentials: [[sysadmin, notent1]]
+        _anular:
+          label: anular
+          credentials: [[sysadmin, notent1]]
+        _new:
+          label: nuevo
+          credentials: [[sysadmin, notent1, notent2]]
+        _show:
+          label: mostrar
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _save:
+          label: guardar
+          credentials: [[sysadmin, notent1, notent2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[sysadmin, notent1, notent2]]
+        _list:
+          label: listado
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _print:
+          label: imprimir
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _add_item:
+          label: agregar item
+          credentials: [[sysadmin, notent1, notent2]]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _reportePendientes:
+          label: REPORTE PENDIENTES POR COBRAR
+          target: _blank
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+        _reportePrefacturados:
+          label: REPORTE TOTAL PROCESADO
+          target: _blank
+          credentials: [[sysadmin, notent1, notent2, notent3]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        fact: {label: Factura, is_real: true}
+        ncontrol: {label: Cod., is_real: true}
+        descripcion: {label: Descripcion}
+        cliente_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        dias_credito: {label: Dias de credito, is_real: true}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Notas de entrega nn listado nn nota_entrega
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=ncontrol, company, razon_social, _date, TotalCoin, PendienteCoin, _estatus]
+        sort: [ncontrol, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, razon_social, doc_id, ncontrol, num_factura, estatus, fecha, updated_at, _blank3, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Notas de entrega nn editar nn nota_entrega
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Notas de entrega nn nuevo nn nota_entrega
+        actions:
+          _list: ~
+          _new: ~
+          _save: ~
+      show:
+        title:   Notas de entrega nn detalle nn nota_entrega
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

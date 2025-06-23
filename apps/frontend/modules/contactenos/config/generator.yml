@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           contactenos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contactenos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _edit:
+           label: editar
+        _delete:
+           label: eliminar
+        _new:
+           label: nuevo            
+        _show:
+           label: mostrar           
+        _save:
+           label: enviar           
+        _save_and_add:
+           label: guardar y agregar nuevo
+        _list:
+           label: regresar a la lista
+        _reset:
+           label: borrar filtros
+      fields:
+        email: {label: Correo Electronico}
+        mensaje: {label: Mensaje}
+        nombre: {label: Nombre}
+        website: {label: Website}
+      list: ~
+      filter: ~
+      form:
+        display:
+          "": [nombre, email, mensaje]
+      edit: ~

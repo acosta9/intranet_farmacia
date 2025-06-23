@@ -1,0 +1,91 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Otros
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          otros
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, suppventa, tas1, tas2, tas3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, suppventa, tas1, tas2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, suppventa, tas1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, suppventa, tas1, tas2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, suppventa, tas1, tas2, tas3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, suppventa, tas1, tas2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, suppventa, tas1, tas2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, suppventa, tas1, tas2, tas3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, suppventa, tas1, tas2, tas3]]
+      fields:
+        id: {label: Codigo}
+        company: {label: Empresa, is_real: true}
+        category: {label: Categoria, is_real: true}
+        empresa_id: {label: Empresa}
+        nombre: {label: Tipo Tasa}
+        valor: {label: Valor}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        creado_por: {label: Creado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        TipoTasa: {label: Tipo Tasa, is_real: true}
+        valorNew: {label: Valor}
+      list:
+        table_method: doSelectJoinOtros
+        title: Variables de Sistema nn listado nn otros
+        display: [=id, company, TipoTasa, valorNew, created_at]
+        sort: [created_at, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, created_at, creado_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Variables de Sistema nn editar nn otros
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Variables de Sistema nn nuevo nn otros
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Variables de Sistema nn detalle nn otros
+        display:
+          requeridos: [_mask_show]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~

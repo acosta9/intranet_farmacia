@@ -1,0 +1,8 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    config:
+      list:
+        title:   Lista de Usuarios
+      form:
+        class: sfGuardUserAdminForm        

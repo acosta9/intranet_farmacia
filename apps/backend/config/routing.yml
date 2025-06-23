@@ -1,0 +1,500 @@
+devolver_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DevolverCompra
+    module:               devolver_compra
+    prefix_path:          /devolver_compra
+    column:               id
+    with_wildcard_routes: true
+
+gastos_tipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GastosTipo
+    module:               gastos_tipo
+    prefix_path:          /gastos_tipo
+    column:               id
+    with_wildcard_routes: true
+
+proveedor_tipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProveedorTipo
+    module:               proveedor_tipo
+    prefix_path:          /proveedor_tipo
+    column:               id
+    with_wildcard_routes: true
+
+factura_gastos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FacturaGastos
+    module:               factura_gastos
+    prefix_path:          /factura_gastos
+    column:               id
+    with_wildcard_routes: true
+
+prod_novendidos:
+  url:   /prod_novendidos
+  param: { module: prod_novendidos, action: index }
+
+comparar_depositos:
+  url:   /comparar_depositos
+  param: { module: comparar_depositos, action: index }
+
+traslado_aut:
+  url:   /traslado_aut
+  param: { module: traslado_aut, action: index }  
+
+nota_debito:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotaDebito
+    module:               nota_debito
+    prefix_path:          /nota_debito
+    column:               id
+    with_wildcard_routes: true
+
+recibo_pago_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ReciboPagoCompra
+    module:               recibo_pago_compra
+    prefix_path:          /recibo_pago_compra
+    column:               id
+    with_wildcard_routes: true
+
+turnover:
+  url:   /turnover
+  param: { module: turnover, action: index }
+
+safety_stock_farmacia:
+  url:   /safety_stock_farmacia
+  param: { module: safety_stock_farmacia, action: index }
+  
+safety_stock_farmacia_config:
+  url:   /safety_stock_farmacia_config
+  param: { module: safety_stock_farmacia_config, action: index }
+
+prod_vendidos_ranking:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProdVendidos
+    module:               ranking
+    prefix_path:          /ranking
+    column:               id
+    with_wildcard_routes: true
+
+ordenes_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OrdenesCompra
+    module:               ordenes_compra
+    prefix_path:          /ordenes_compra
+    column:               id
+    with_wildcard_routes: true
+
+cotizacion_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CotizacionCompra
+    module:               cotizacion_compra
+    prefix_path:          /cotizacion_compra
+    column:               id
+    with_wildcard_routes: true
+
+prod_vendidos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProdVendidos
+    module:               prod_vendidos
+    prefix_path:          /prod_vendidos
+    column:               id
+    with_wildcard_routes: true
+
+facturas_registradas:
+  url:   /facturas_registradas
+  param: { module: facturas_registradas, action: index }  
+
+libro_compras:
+  url:   /libro_compras
+  param: { module: libro_compras, action: index }     
+
+kardex:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Kardex
+    module:               kardex
+    prefix_path:          /kardex
+    column:               id
+    with_wildcard_routes: true
+
+caja:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                caja
+    module:               caja
+    prefix_path:          /caja
+    column:               id
+    with_wildcard_routes: true
+    
+gcaja:
+  url:   /gcaja
+  param: { module: gcaja, action: index }
+
+cierre:
+  url:   /gcaja/cierre
+  param: { module: gcaja, action: cierre }  
+
+gestionar:
+  url:   /gcaja/gestionar
+  param: { module: gcaja, action: gestionar }
+
+cuentas_pagar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CuentasPagar
+    module:               cuentas_pagar
+    prefix_path:          /cuentas_pagar
+    column:               id
+    with_wildcard_routes: true
+
+factura_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FacturaCompra
+    module:               factura_compra
+    prefix_path:          /factura_compra
+    column:               id
+    with_wildcard_routes: true
+
+orden_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OrdenCompra
+    module:               orden_compra
+    prefix_path:          /orden_compra
+    column:               id
+    with_wildcard_routes: true
+
+contactenos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                contactenos
+    module:               contactenos
+    prefix_path:          /contactenos
+    column:               id
+    with_wildcard_routes: true
+
+galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                galeria
+    module:               galeria
+    prefix_path:          /galeria
+    column:               id
+    with_wildcard_routes: true
+
+banners:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                banners
+    module:               banners
+    prefix_path:          /banners
+    column:               id
+    with_wildcard_routes: true
+
+almacen_transito:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AlmacenTransito
+    module:               almacen_transito
+    prefix_path:          /almacen_transito
+    column:               id
+    with_wildcard_routes: true
+
+inv_salida:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InvSalida
+    module:               inv_salida
+    prefix_path:          /inv_salida
+    column:               id
+    with_wildcard_routes: true
+
+inv_entrada:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InvEntrada
+    module:               inv_entrada
+    prefix_path:          /inv_entrada
+    column:               id
+    with_wildcard_routes: true
+
+inv_ajuste:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InvAjuste
+    module:               inv_ajuste
+    prefix_path:          /inv_ajuste
+    column:               id
+    with_wildcard_routes: true
+
+proveedor:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Proveedor
+    module:               proveedor
+    prefix_path:          /proveedor
+    column:               id
+    with_wildcard_routes: true
+
+traslado:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Traslado
+    module:               traslado
+    prefix_path:          /traslado
+    column:               id
+    with_wildcard_routes: true
+
+nota_credito:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotaCredito
+    module:               nota_credito
+    prefix_path:          /nota_credito
+    column:               id
+    with_wildcard_routes: true
+
+retenciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Retenciones
+    module:               retenciones
+    prefix_path:          /retenciones
+    column:               id
+    with_wildcard_routes: true
+
+oferta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Oferta
+    module:               oferta
+    prefix_path:          /oferta
+    column:               id
+    with_wildcard_routes: true
+
+cuentas_cobrar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CuentasCobrar
+    module:               cuentas_cobrar
+    prefix_path:          /cuentas_cobrar
+    column:               id
+    with_wildcard_routes: true
+
+nota_entrega:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotaEntrega
+    module:               nota_entrega
+    prefix_path:          /nota_entrega
+    column:               id
+    with_wildcard_routes: true
+
+recibo_pago:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ReciboPago
+    module:               recibo_pago
+    prefix_path:          /recibo_pago
+    column:               id
+    with_wildcard_routes: true
+
+forma_pago:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FormaPago
+    module:               forma_pago
+    prefix_path:          /forma_pago
+    column:               id
+    with_wildcard_routes: true
+
+factura:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Factura
+    module:               factura
+    prefix_path:          /factura
+    column:               id
+    with_wildcard_routes: true
+
+comisiones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Comisiones
+    module:               comisiones
+    prefix_path:          /comisiones
+    column:               id
+    with_wildcard_routes: true
+
+cliente:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Cliente
+    module:               cliente
+    prefix_path:          /cliente
+    column:               id
+    with_wildcard_routes: true
+
+inventario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Inventario
+    module:               inventario
+    prefix_path:          /inventario
+    column:               id
+    with_wildcard_routes: true
+
+inv_deposito:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InvDeposito
+    module:               inv_deposito
+    prefix_path:          /inv_deposito
+    column:               id
+    with_wildcard_routes: true
+
+empresa:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Empresa
+    module:               empresa
+    prefix_path:          /empresa
+    column:               id
+    with_wildcard_routes: true
+
+otros:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Otros
+    module:               otros
+    prefix_path:          /otros
+    column:               id
+    with_wildcard_routes: true
+
+prod_unidad:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProdUnidad
+    module:               prod_unidad
+    prefix_path:          /prod_unidad
+    column:               id
+    with_wildcard_routes: true
+
+compuesto:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Compuesto
+    module:               compuesto
+    prefix_path:          /compuesto
+    column:               id
+    with_wildcard_routes: true
+
+prod_laboratorio:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProdLaboratorio
+    module:               prod_laboratorio
+    prefix_path:          /prod_laboratorio
+    column:               id
+    with_wildcard_routes: true
+
+prod_categoria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProdCategoria
+    module:               prod_categoria
+    prefix_path:          /prod_categoria
+    column:               id
+    with_wildcard_routes: true
+
+producto:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Producto
+    module:               producto
+    prefix_path:          /producto
+    column:               id
+    with_wildcard_routes: true
+
+#usuarios
+sf_guard_user_micuenta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               micuenta
+    prefix_path:          /micuenta
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_permission:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardPermission
+    module:               permisos
+    prefix_path:          /permisos
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardGroup
+    module:               grupos
+    prefix_path:          /grupos
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               usuarios
+    prefix_path:          /usuarios
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /sigin
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /recuperar-password
+  param: { module: sfGuardAuth, action: password }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: inicio, action: index }
+
+inicio:
+  url:   /inicio
+  param: { module: inicio, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

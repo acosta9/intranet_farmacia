@@ -1,0 +1,123 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Producto
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          producto
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, pro1, pro2, pro3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, pro1, pro2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, pro1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, pro1, pro2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, pro1, pro2, pro3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, pro1, pro2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, pro1, pro2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, pro1, pro2, pro3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, pro1, pro2, pro3]]
+        _add_item:
+          label: agregar imagen
+          credentials: [[farmacia, pro1, pro2]]
+        _reporteProductos:
+           label: REPORTE DE PRODUCTOS
+           target: _blank
+           credentials: [[farmacia, pro1, pro2, pro3]]
+        _reporteProdFarma:
+           label: REPORTE DE PRECIOS
+           target: _blank
+           credentials: [[farmacia, pro1, pro2, pro3]]
+      fields:
+        nombre: {label: Nombre}
+        serial: {label: Serial}
+        codigo: {label: Codigo}
+        unidad_id: {label: Presentacion}
+        ProdUnidad: {label: Presentacion, is_real: true}
+        activo: {label: Estatus}
+        tipo: {label: Tipo}
+        ProdTipo: {label: Tipo, is_real: true}
+        laboratorio_id: {label: Laboratorio}
+        categoria_id: {label: Categoria}
+        catname: {label: Categoria}
+        compuesto_list: {label: Compuestos}
+        costo_usd_1: {label: Costo}
+        costo_usd_2: {label: Costo USD (2)}
+        costo_usd_3: {label: Costo USD (3)}
+        util_usd_1: {label: Utilidad % (1)}
+        util_usd_2: {label: Utilidad % (2)}
+        util_usd_3: {label: Utilidad % (3)}
+        precio_usd_1: {label: Precio USD (1)}
+        precio_usd_2: {label: Precio USD (2)}
+        precio_usd_3: {label: Precio USD (3)}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        url_imagen_desc: {label: Titulo Imagen}
+        url_imagen: {label: Imagen, tipo: url_imagen}
+        ProdLab: {label: Lab, is_real: true}
+      list:
+        title: Productos nn listado nn producto
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=nombre, serial, ProdLab, ProdUnidad, ProdTipo, _costo_usd_1, url_imagen, updated_at]
+        sort: [updated_at, desc]
+        batch_actions:
+          _reporteProdFarma: ~
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Productos nn editar nn producto
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _add_item: ~
+          _save: ~
+      new:
+        title:   Productos nn nuevo nn producto
+        actions:
+          _list: ~
+          _add_item: ~
+          _save: ~
+      show:
+        title:   Productos nn detalle nn producto
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~

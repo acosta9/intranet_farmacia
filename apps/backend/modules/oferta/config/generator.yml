@@ -1,0 +1,113 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Oferta
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          oferta
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, ofer1, ofer2, ofer3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, ofer1, ofer2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, ofer1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, ofer1, ofer2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, ofer1, ofer2, ofer3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, ofer1, ofer2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, ofer1, ofer2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, ofer1, ofer2, ofer3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, ofer1, ofer2, ofer3]]
+        _add_item:
+           label: agregar prod.
+           credentials: [[farmacia, ofer1, ofer2]]
+        _anular:
+           label: anular
+           credentials: [[farmacia, ofer1]]
+      fields:
+        nombre: {label: Nombre}
+        empresa_id: {label: Empresa}
+        deposito_id: {label: Deposito}
+        producto_id: {label: Producto}
+        fecha: {label: Fecha}
+        fecha_venc: {label: Fecha Venc.}
+        EmpresaName: {label: Empresa, is_real: true}
+        DepositoName: {label: Deposito, is_real: true}
+        ProductoName: {label: Producto, is_real: true}
+        activo: {label: Estatus}
+        Estatus: {label: Estatus, is_real: true}
+        tipo_oferta: {label: Tipo de Oferta}
+        tipo: {label: Tipo de Oferta, is_real: true}
+        precio_usd: {label: Precio Usd}
+        precio: {label: Precio, is_real: true}
+        exento: {label: Exento}
+        qty: {label: Cantidad}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        updated_por: {label: Actualizado por}
+        TipoTasa: {label: Tipo Tasa, is_real: true}
+        id: {label: Cod.}
+      list:
+        title: Ofertas nn listado nn oferta
+        display: [id, =nombre, EmpresaName, DepositoName, tipo, _activo, _precio, TipoTasa, _updated_at]
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, nombre, tipo, activo, _blank3, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_codigo, nombre, fecha, fecha_venc, activo, exento, _mask, _det]
+      edit:
+        title:   Ofertas nn editar nn oferta
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _add_item: ~
+          _save: ~
+      new:
+        title:   Ofertas nn nuevo nn oferta
+        actions:
+          _list: ~
+          _add_item: ~
+          _save: ~
+      show:
+        title:   Ofertas nn detalle nn oferta
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+          requeridos: [_mask_show]
+        actions:
+          _list: ~
+          _new: ~

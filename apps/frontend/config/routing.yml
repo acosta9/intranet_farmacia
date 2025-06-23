@@ -1,0 +1,123 @@
+oferta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Oferta
+    module:               oferta
+    prefix_path:          /oferta
+    column:               id
+    with_wildcard_routes: true
+
+recibo_pago:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ReciboPago
+    module:               recibo_pago
+    prefix_path:          /recibo_pago
+    column:               id
+    with_wildcard_routes: true
+
+cuentas_cobrar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CuentasCobrar
+    module:               cuentas_cobrar
+    prefix_path:          /cuentas_cobrar
+    column:               id
+    with_wildcard_routes: true
+
+nota_entrega:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotaEntrega
+    module:               nota_entrega
+    prefix_path:          /nota_entrega
+    column:               id
+    with_wildcard_routes: true
+
+factura:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Factura
+    module:               factura
+    prefix_path:          /factura
+    column:               id
+    with_wildcard_routes: true
+
+orden_compra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OrdenCompra
+    module:               orden_compra
+    prefix_path:          /orden_compra
+    column:               id
+    with_wildcard_routes: true
+
+carrito:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Carrito
+    module:               carrito
+    prefix_path:          /carrito
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               usuarios
+    prefix_path:          /usuarios
+    column:               id
+    with_wildcard_routes: true
+
+producto:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Producto
+    module:               producto
+    prefix_path:          /producto
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+user:
+  url:   /user
+  param: { module: user, action: index }
+
+contactenos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                contactenos
+    module:               contactenos
+    prefix_path:          /contactenos
+
+inicio:
+  url:   /inicio
+  param: { module: inicio, action: index }
+
+# pagina de inicio
+homepage:
+  url:   /
+  param: { module: inicio, action: index }
+
+sf_guard_signin:
+  url:   /signin
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /recuperar-password
+  param: { module: sfGuardAuth, action: password }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

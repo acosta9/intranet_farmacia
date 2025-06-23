@@ -1,0 +1,102 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Proveedor
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          proveedor
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, cuentaspagar, prov1, prov2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, cuentaspagar, prov1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, cuentaspagar, prov1, prov2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, cuentaspagar, prov1, prov2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, cuentaspagar, prov1, prov2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+        _reporteProveedores:
+          label: REPORTE DE PROVEEDORES
+          target: _blank
+          credentials: [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+      fields:
+        full_name: {label: Nombre}
+        doc_id: {label: RIF/CI}
+        telefono: {label: Telf(s)}
+        telf: {label: Telefono (1)}
+        celular: {label: Telefono (2)}
+        email: {label: Correo Electronico}
+        direccion: {label: Direccion}
+        descripcion: {label: Descripcion}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        tipoTxt: {label: Tipo Proveedor, is_real: true}
+      list:
+        title: Proveedores nn listado nn proveedor
+        table_method:
+        max_per_page: 20
+        display: [=id, =full_name, tipoTxt, doc_id, telf]
+        sort: [updated_at, desc]
+        batch_actions:
+          _reporteProveedores: ~
+      filter:
+        display: [_mask_filter, doc_id, telefono, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Proveedores nn editar nn proveedor
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Proveedores nn nuevo nn proveedor
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Proveedores nn detalle nn proveedor
+        display:
+          requeridos: [_mask_show]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

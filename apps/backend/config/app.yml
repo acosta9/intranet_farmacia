@@ -1,0 +1,228 @@
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+all:
+  sf_guard_plugin:
+    routes_register: false
+    remember_key_expiration_age:  2592000
+    remember_cookie_name:         RememberMe
+
+  sf_admin_dash:
+    web_dir:                      /sfAdminDashPlugin
+    image_dir:                    /sfAdminDashPlugin/images/icons/
+    default_image:                config.png
+    resize_mode:                  thumbnail
+    site:                         jmw.com
+    siteac:                       JMW
+    siteref:                      http://jmw.com
+    version:                      1.0.0-beta.1
+    include_path:                 true
+    include_jquery_no_conflict:   false
+    logout:                       true
+    login_route:                  sf_guard_signin
+    logout_route:                 sf_guard_signout
+    categories:
+      USUARIOS:
+        credentials:  [sysadmin]
+        image: fa-users-cog
+        credentials:  [sysadmin]
+        items:
+          Usuarios:
+            url:          sf_guard_user
+            credentials:  [sysadmin]
+          Permisos:
+            url:          sf_guard_permission
+            credentials:  [sysadmin]
+          Grupos:
+            url:          sf_guard_group
+            credentials:  [sysadmin]
+      ESTADISTICAS:
+        image: fas fa-chart-bar
+        credentials:  [[farmacia, suppventa, auditorinv, analistai, kar1, kar2, kar3, turove, rancli1, rancli2, rancli3, comdep, promasven1, promasven2, promasven3, pronoven]]
+        items:
+          Prods Mas Vendidos:
+            url:          prod_vendidos
+            credentials:  [[farmacia, suppventa, promasven1, promasven2, promasven3]]
+          Prods No Vendidos:
+            url:          prod_novendidos
+            credentials:  [[farmacia, suppventa, pronoven]]
+          Comparar Depositos:
+            url:          comparar_depositos
+            credentials:  [[farmacia, comdep]]
+          Ranking Clientes:
+            url:          prod_vendidos_ranking
+            credentials:  [[compra2, rancli1, rancli2, rancli3]]
+          TurnOver:
+            url:          turnover
+            credentials:  [[farmacia, turove]]
+          SafetyStockFarmacia:
+            url:          safety_stock_farmacia
+            credentials:  [[safstok]]
+          Kardex:
+            url:          kardex
+            credentials:  [[farmacia, auditorinv, analistai, kar1, kar2, kar3]]
+      ADMINISTRACION:
+        image: fas fa-tools
+        credentials:  [[farmacia, suppventa, emp1, emp2, emp3, ofer1, ofer2, ofer3, tas1, tas2, tas3, forpag1, forpag2, forpag3]]
+        items:
+          Empresas:
+            url:          empresa
+            credentials:  [[sysadmin, emp1, emp2, emp3]]
+          Tasas:
+            url:          otros
+            credentials:  [[farmacia, suppventa, tas1, tas2, tas3]]
+          Ofertas:
+            url:          oferta
+            credentials:  [[farmacia, ofer1, ofer2, ofer3]]
+          Formas de Pago:
+            url:          forma_pago
+            credentials:  [[sysadmin, forpag1, forpag2, forpag3]]
+      FACTURACION:
+        image: fas fa-file-invoice-dollar
+        credentials:  [[farmacia, sysadmin, suppventa, ret1, ret2, ret3, cuecob1, cuecob2, cuecob3, recpag1, recpag2, recpag3, notent1, notent2, notent3, ordven1, ordven2, ordven3, fac1, fac2, fac3, cli1, cli2, cli3, notcre1, notcre2, notcre3]]
+        items:
+          Clientes:
+            url:          cliente
+            credentials:  [[farmacia, sysadmin, suppventa, cli1, cli2, cli3]]
+          Notas de Entrega:
+            url:          nota_entrega
+            credentials:  [[farmacia, sysadmin, suppventa, notent1, notent2, notent3]]
+          Facturas:
+            url:          factura
+            credentials:  [[farmacia, sysadmin, suppventa, fac1, fac2, fac3]]
+          Recibos de Pago:
+            url:          recibo_pago
+            credentials:  [[sysadmin, recpag1, recpag2, recpag3]]
+          Notas de credito:
+            url:          nota_credito
+            credentials:  [[farmacia, sysadmin, notcre1, notcre2, notcre3]]
+          Ordenes de venta:
+            url:          orden_compra
+            credentials:  [[sysadmin, ordven1, ordven2, ordven3]]
+          Cuentas por Cobrar:
+            url:          cuentas_cobrar
+            credentials:  [[sysadmin, cuecob1, cuecob2, cuecob3]]
+          Retenciones:
+            url:          retenciones
+            credentials:  [[sysadmin, ret1, ret2, ret3]]
+      COMPRAS:
+        image: fas fa-shopping-cart
+        credentials:  [[farmacia, cuentaspagar, contador, libcom, facreg, tipgas1, tipgas2, tipgas3, prov1, prov2, prov3, notcrecom1, notcrecom2, notcrecom3, regpag1, regpag2, regpag3, cuepag1, cuepag2, cuepag3, facgas1, facgas2, facgas3, devcom1, devcom2, devcom3, faccom1, faccom2, faccom3, cot1, cot2, cot3, ordcom1, ordcom2, ordcom3]]
+        items:
+          Cotizaciones:
+            url:          cotizacion_compra
+            credentials:  [[farmacia, cot1, cot2, cot3]]
+          Ordenes de compra:
+            url:          ordenes_compra
+            credentials:  [[farmacia, ordcom1, ordcom2, ordcom3]]
+          Facturas de compra:
+            url:          factura_compra
+            credentials:  [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+          Devolución de compra:
+            url:          devolver_compra
+            credentials:  [[farmacia, cuentaspagar, devcom1, devcom2, devcom3]]            
+          Facturas de gastos:
+            url:          factura_gastos
+            credentials:  [[sysadmin, cuentaspagar, facgas1, facgas2, facgas3]]
+          Cuentas por pagar:
+            url:          cuentas_pagar
+            credentials:  [[sysadmin, cuentaspagar, contador, cuepag1, cuepag2, cuepag3]]
+          Registrar pagos:
+            url:          recibo_pago_compra
+            credentials:  [[sysadmin, cuentaspagar, regpag1, regpag2, regpag3]]
+          Notas de Creditos:
+            url:          nota_debito
+            credentials:  [[sysadmin, cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+          Proveedores:
+            url:          proveedor
+            credentials:  [[farmacia, cuentaspagar, prov1, prov2, prov3]]
+          Tipos de Gastos:
+            url:          gastos_tipo
+            credentials:  [[sysadmin, cuentaspagar, tipgas1, tipgas2, tipgas3]]
+          Facturas Registradas:
+            url:          facturas_registradas
+            credentials:  [[sysadmin, cuentaspagar, facreg]]
+          Libro de Compras:
+            url:          libro_compras
+            credentials:  [[sysadmin, cuentaspagar, libcom]]                       
+      GESTION PRODUCTOS:
+        image: fas fa-sitemap
+        credentials: [[farmacia, pre1, pre2, pre3, lab1, lab2, lab3, com1, com2, com3, cat1, cat2, cat3, pro1, pro2, pro3]]
+        items:
+          Productos:
+            url:          producto
+            credentials:  [[farmacia, pro1, pro2, pro3]]
+          Categorias:
+            url:          prod_categoria
+            credentials:  [[farmacia, cat1, cat2, cat3]]
+          Compuestos:
+            url:          compuesto
+            credentials:  [[farmacia, com1, com2, com3]]
+          Laboratorios:
+            url:          prod_laboratorio
+            credentials:  [[farmacia, lab1, lab2, lab3]]
+          Presentaciones:
+            url:          prod_unidad
+            credentials:  [[farmacia, pre1, pre2, pre3]]
+      GESTION INVENTARIO:
+        image: fas fa-file-signature
+        credentials:  [[farmacia, suppventa, auditorinv, analistai, inventario, tras1, tras2, tras3, invaju1, invaju2, invaju3, invsal1, invsal2, invsal3, alm1, alm2, alm3, inv1, inv2, inv3, entinv1, entinv2, entinv3]]
+        items:
+          Almacenes:
+            url:          inv_deposito
+            credentials:  [[sysadmin, alm1, alm2, alm3]]
+          Inventario:
+            url:          inventario
+            credentials:  [[farmacia, suppventa, auditorinv, analistai, inventario, inv1, inv2, inv3]]
+          Entrada de Inv.:
+            url:          inv_entrada
+            credentials:  [[farmacia, entinv1, entinv2, entinv3]]
+          Salida de Inv.:
+            url:          inv_salida
+            credentials:  [[farmacia, suppventa, invsal1, invsal2, invsal3]]
+          Ajuste de Inv.:
+            url:          inv_ajuste
+            credentials:  [[sysadmin, analistai, invaju1, invaju2, invaju3]]
+          Traslado Inv.:
+            url:          traslado
+            credentials:  [[farmacia, suppventa, tras1, tras2, tras3]]         
+      GESTION MERCANCIA:
+        image: fas fa-truck-loading
+        credentials:  [[sysadmin, desp1, desp2, desp3]]
+        items:
+          Despacho:
+            url:          almacen_transito
+            credentials:  [[farmacia, desp1, desp2, desp3]]
+      PUNTO DE VENTA:
+        image: fas fa-dollar-sign
+        credentials:  [[supventas, suppventa, contador, confcaj1 confcaj2, confcaj3, gescaj1, gescaj2, gescaj3]]
+        items:     
+          Conf. Caja:
+            url:          caja
+            credentials:  [[supventas, suppventa, confcaj1 confcaj2, confcaj3]]   
+          Gestión de Caja:
+            url:          gcaja/gestionar
+            credentials:  [[supventas, suppventa, contador, gescaj]]
+      GESTION WEBSITE:
+        image: fas fa-globe
+        credentials: [sysadmin]
+        items:
+          Banners:
+            url:    banners
+            credentials: [sysadmin]
+          Slider:
+            url:    galeria
+            credentials: [sysadmin]
+          Contactenos:
+            url:    contactenos
+            credentials: [sysadmin]
+      CONFIGURACION:
+        image: fas fa-cog
+        credentials:  [[sysadmin, safstokcong]]
+        items:
+          SafetyStock F. Config:
+            url:          safety_stock_farmacia_config
+            credentials:  [[farmacia, sysadmin, safstokcong]]

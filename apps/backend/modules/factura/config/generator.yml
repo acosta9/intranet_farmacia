@@ -1,0 +1,116 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Factura
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          factura
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, fac1, fac2, fac3]]
+        _edit:
+          label: editar
+          credentials: [[sysadmin, fac1, fac2, fac3]]
+        _delete:
+          label: eliminar
+          credentials: [[sysadmin, fac1]]
+        _anular:
+          label: anular
+          credentials: [[sysadmin, fac1]]
+        _new:
+          label: nuevo
+          credentials: [[sysadmin, fac1, fac2]]
+        _show:
+          label: mostrar
+          credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, fac1, fac2]]
+        _save:
+          label: guardar
+          credentials: [[sysadmin, fac1, fac2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[sysadmin, fac1, fac2]]
+        _list:
+          label: listado
+          credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, fac1, fac2, fac3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, fac1, fac2, fac3]]
+        _print:
+          label: imprimir
+          credentials: [[farmacia, suppventa, auditorinv, analistai, inventario, fac1, fac2, fac3]]
+        _add_item:
+          label: agregar item
+          credentials: [[sysadmin, fac1, fac2]]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [[sysadmin, fac1, fac2]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° de Control, is_real: true}
+        num_factura: {label: N°, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        nulo: {label: Anulado, is_real: true}
+        coin: {label: Moneda}
+        pagado: {label: Pagado}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        hasfact: {label: Posee una factura}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Facturas nn listado nn factura
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [_num_factura, company, razon_social, _date, TotalCoin, PendienteCoin, _estatus]
+        sort: [ncontrol, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, fecha, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Facturas nn editar nn factura
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Facturas nn nuevo nn factura
+        actions:
+          _list: ~
+          _new: ~
+          _save: ~
+      show:
+        title:   Facturas nn detalle nn factura
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

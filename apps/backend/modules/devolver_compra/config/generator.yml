@@ -1,0 +1,97 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           DevolverCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          devolver_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[farmacia, cuentaspagar, devcom1, devcom2, devcom3]]
+        _edit:
+          label: editar
+          credentials: [[farmacia, devcom1, devcom2]]
+        _delete:
+          label: eliminar
+          credentials: [[farmacia, devcom1]]
+        _anular:
+          label: anular
+          credentials: [[farmacia, devcom1]]
+        _new:
+          label: nuevo
+          credentials: [[farmacia, devcom1, devcom2]]
+        _show:
+          label: mostrar
+          credentials: [[farmacia, cuentaspagar, devcom1, devcom2, devcom3]]
+        _save:
+          label: guardar
+          credentials: [[farmacia, devcom1, devcom2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[farmacia, devcom1, devcom2]]
+        _list:
+          label: listado
+          credentials: [[farmacia, cuentaspagar, devcom1, devcom2, devcom3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[farmacia, cuentaspagar, devcom1, devcom2, devcom3]]
+        _add_item:
+          label: agregar item
+          credentials: [[farmacia, devcom1, devcom2]]
+      fields:
+        empresa_id: {label: Empresa}
+        tasa_cambio: {label: Tasa de Cambio}
+        factura_compra_id: {label: Factura}
+        nfactura: {label: N° de Factura, is_real: true}
+        proveedor_id: {label: Proveedor}
+        pname: {label: Proveedor}
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        descripcion: {label: Descripcion}
+        created_at: {label: Dia de Creacion}
+        updated_at: {label: Ult. Actualizacion}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}        
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}        
+        emin: {label: Empresa, is_real: true}
+        id: {label: Cod.}
+      list:
+        title: Devoluciones en compra nn listado nn devolver_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [id, emin, nfactura, pname, fecha, _estatus]
+        sort: [id]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, proveedor_id, factura_compra_id, fecha, _blank2, creado_por, updated_por]
+      form:
+        display:
+          requeridos: []
+      edit:
+        title:   Devoluciones en compra nn editar nn devolver_compra
+        actions:
+          _list: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Devoluciones en compra nn nuevo nn devolver_compra
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Devoluciones en compra nn detalle nn devolver_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~

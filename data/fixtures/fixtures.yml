@@ -1,0 +1,304 @@
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2019-10-08 11:40:17'
+sfGuardUserPermission:
+  sfGuardUserPermission_1_1:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_1
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2019-10-08 11:40:17'
+  sfGuardUserPermission_2_1:
+    User: sfGuardUser_2
+    Permission: sfGuardPermission_1
+    created_at: '2020-05-05 05:00:16'
+    updated_at: '2020-05-05 05:00:16'
+  sfGuardUserPermission_3_1:
+    User: sfGuardUser_3
+    Permission: sfGuardPermission_1
+    created_at: '2020-05-05 05:01:35'
+    updated_at: '2020-05-05 05:01:35'
+  sfGuardUserPermission_4_1:
+    User: sfGuardUser_4
+    Permission: sfGuardPermission_1
+    created_at: '2020-05-05 05:02:04'
+    updated_at: '2020-05-05 05:02:04'
+  sfGuardUserPermission_5_1:
+    User: sfGuardUser_5
+    Permission: sfGuardPermission_1
+    created_at: '2020-05-05 05:02:34'
+    updated_at: '2020-05-05 05:02:34'
+sfGuardUser:
+  sfGuardUser_1:
+    full_name: Juan Acosta
+    email_address: juan9acosta@gmail.com
+    username: admin
+    url_imagen: 8f507bc1f690f743dcac458320d6511644fa3ce5.jpg
+    cargo: 'Supervisor De Red'
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: '2020-03-20 01:34:22'
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2020-03-20 01:34:22'
+  sfGuardUser_2:
+    full_name: 'Jad Waked'
+    email_address: farmaciaorion@hotmail.com
+    username: jadwaked
+    url_imagen: null
+    cargo: 'Gerente General'
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: '2020-05-05 05:03:13'
+    created_at: '2020-05-05 05:00:16'
+    updated_at: '2020-05-05 05:03:13'
+  sfGuardUser_3:
+    full_name: 'Nelcy Prado'
+    email_address: farmaciaorion2@hotmail.com
+    username: administrador
+    url_imagen: null
+    cargo: Gerente
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2020-05-05 05:01:35'
+    updated_at: '2020-05-05 05:01:35'
+  sfGuardUser_4:
+    full_name: Ines
+    email_address: farmaciaorion3@hotmail.com
+    username: asistente
+    url_imagen: null
+    cargo: Asistente
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2020-05-05 05:02:04'
+    updated_at: '2020-05-05 05:02:04'
+  sfGuardUser_5:
+    full_name: Maria Gonzalez
+    email_address: farmaciaorion4@hotmail.com
+    username: vendedor01
+    url_imagen: null
+    cargo: 'Vendedor'
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2020-05-05 05:02:34'
+    updated_at: '2020-05-05 05:02:34'
+  sfGuardUser_6:
+    full_name: Pepito Perez
+    email_address: farmaciaorion5@hotmail.com
+    username: vendedor02
+    url_imagen: null
+    cargo: 'Vendedor'
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2020-05-05 05:02:34'
+    updated_at: '2020-05-05 05:02:34'
+  sfGuardUser_7:
+    full_name: Jose Fernandez
+    email_address: farmaciaorion6@hotmail.com
+    username: vendedor03
+    url_imagen: null
+    cargo: 'Vendedor'
+    algorithm: sha1
+    password: 123456
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2020-05-05 05:02:34'
+    updated_at: '2020-05-05 05:02:34'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2019-10-08 11:40:17'
+  sfGuardUserGroup_2_1:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_1
+    created_at: '2020-05-05 05:00:16'
+    updated_at: '2020-05-05 05:00:16'
+  sfGuardUserGroup_3_1:
+    User: sfGuardUser_3
+    Group: sfGuardGroup_1
+    created_at: '2020-05-05 05:01:35'
+    updated_at: '2020-05-05 05:01:35'
+  sfGuardUserGroup_4_1:
+    User: sfGuardUser_4
+    Group: sfGuardGroup_1
+    created_at: '2020-05-05 05:02:04'
+    updated_at: '2020-05-05 05:02:04'
+  sfGuardUserGroup_5_1:
+    User: sfGuardUser_5
+    Group: sfGuardGroup_1
+    created_at: '2020-05-05 05:02:34'
+    updated_at: '2020-05-05 05:02:34'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: sysadmin
+    description: 'Permisos De Administradores'
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2019-10-31 16:13:08'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: admin
+    description: 'Grupo de administradores'
+    created_at: '2019-10-08 11:40:17'
+    updated_at: '2019-10-08 11:40:17'
+Empresa:
+  Empresa_1000:
+    id: 1000
+    nombre: 'CASA DE REPRESENTACIONES JMW CA'
+    ncontrol: 00-0538
+    nfactura: 000-0513
+    rif: J-44123611-7
+    direccion: 'AV. BOLIVAR, LOCAL NRO 5, SECTOR CENTRO DE PUNTO FIJO - EDO. FALCóN'
+    telefono: '(0414) 933-3333'
+    email: casarepresentacionjmw@hotmail.com
+    tipo: '0'
+    iva: '0'
+    venc_registro_comercio: '2020-05-05'
+    venc_rif: '2020-05-05'
+    venc_bomberos: '2020-05-05'
+    venc_lic_funcionamiento: '2020-05-05'
+    venc_uso_conforme: '2020-05-05'
+    venc_permiso_sanitario: '2020-05-05'
+    venc_permiso_instalacion: '2020-05-05'
+    descripcion: null
+    created_at: '2020-05-05 05:09:15'
+    updated_at: '2020-05-05 05:09:15'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  Empresa_1001:
+    id: 1001
+    nombre: 'DROGUERIA DROGUESI, CA'
+    ncontrol: 00-0874
+    nfactura: 000-0839
+    rif: J-41202411-6
+    direccion: 'CALLE ALTAGRACIA ENTRE BOLíVAR Y COLOMBIA, LOCAL NRO . 1 SECTOR CENTRO DE PUNTO FIJO - ESTADO FALCóN'
+    telefono: '(0414) 933-3333'
+    email: compras@droguesi.com
+    tipo: '0'
+    iva: '0'
+    venc_registro_comercio: '2020-04-05'
+    venc_rif: '2020-04-05'
+    venc_bomberos: '2020-04-05'
+    venc_lic_funcionamiento: '2020-04-05'
+    venc_uso_conforme: '2020-04-05'
+    venc_permiso_sanitario: '2020-04-05'
+    venc_permiso_instalacion: '2020-04-05'
+    descripcion: null
+    created_at: '2020-05-05 05:15:50'
+    updated_at: '2020-05-05 05:15:50'
+    Creator: sfGuardUser_2
+    Updator: sfGuardUser_2
+EmpresaUser:
+  EmpresaUser_1000_1:
+    Empresa: Empresa_1000
+    User: sfGuardUser_1
+    created_at: '2020-05-09 19:52:21'
+    updated_at: '2020-05-09 19:52:21'
+  EmpresaUser_1001_1:
+    Empresa: Empresa_1001
+    User: sfGuardUser_1
+    created_at: '2020-05-09 19:52:21'
+    updated_at: '2020-05-09 19:52:21'
+Otros:
+  Otros_1:
+    Empresa: Empresa_1000
+    nombre: tasa
+    valor: '182536.25'
+    created_at: '2020-05-09 20:54:39'
+    updated_at: '2020-05-09 20:54:39'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  Otros_2:
+    Empresa: Empresa_1000
+    nombre: tasa
+    valor: '197512.25'
+    created_at: '2020-05-10 20:54:39'
+    updated_at: '2020-05-10 20:54:39'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+FormaPago:
+  FormaPago_10001:
+    id: 10001
+    moneda: '1'
+    nombre: EFECTIVO
+    acronimo: EFECTIVO
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:38:30'
+    updated_at: '2020-06-08 19:38:30'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  FormaPago_10002:
+    id: 10002
+    moneda: '1'
+    nombre: 'TRANSFERENCIA BANESCO'
+    acronimo: 'TRANS BANESCO'
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:40:18'
+    updated_at: '2020-06-08 19:40:18'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  FormaPago_10003:
+    id: 10003
+    moneda: '1'
+    nombre: 'PAGO MOVIL BANESCO'
+    acronimo: 'PM BANESCO'
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:38:50'
+    updated_at: '2020-06-08 19:38:50'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  FormaPago_10004:
+    id: 10004
+    moneda: '1'
+    nombre: 'PUNTO DE VENTA'
+    acronimo: 'P VENTA'
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:39:11'
+    updated_at: '2020-06-08 19:39:11'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  FormaPago_10011:
+    id: 10011
+    moneda: '2'
+    nombre: EFECTIVO
+    acronimo: EFECTIVO
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:40:32'
+    updated_at: '2020-06-08 19:40:32'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1
+  FormaPago_10012:
+    id: 10012
+    moneda: '2'
+    nombre: ZELLE
+    acronimo: ZELLE
+    activo: true
+    descripcion: null
+    created_at: '2020-06-08 19:40:41'
+    updated_at: '2020-06-08 19:40:41'
+    Creator: sfGuardUser_1
+    Updator: sfGuardUser_1

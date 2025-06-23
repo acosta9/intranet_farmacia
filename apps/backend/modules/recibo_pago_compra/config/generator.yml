@@ -1,0 +1,107 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ReciboPagoCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          recibo_pago_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]
+        _edit:
+          label: editar
+          credentials: [[cuentaspagar, regpag1, regpag2]]
+        _delete:
+          label: eliminar
+          credentials: [[cuentaspagar, regpag1]]
+        _anular:
+          label: anular
+          credentials: [[cuentaspagar, regpag1]]
+        _new:
+          label: nuevo
+          credentials: [[cuentaspagar, regpag1, regpag2]]
+        _show:
+          label: mostrar
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]
+        _save:
+          label: guardar
+          credentials: [[cuentaspagar, regpag1, regpag2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[cuentaspagar, regpag1, regpag2]]
+        _list:
+          label: listado
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]
+        _exportarBanco:
+          label: EXPORTAR A BANCO
+          target: _blank
+          credentials: [[cuentaspagar, regpag1, regpag2, regpag3]]          
+      fields:
+        monto: {label: Monto USD, is_real: true}
+        ncontrol: {label: Cod, is_real: true}
+        descripcion: {label: Descripcion}
+        proveedor_id: {label: Proveedor}
+        pname: {label: Proveedor, is_real: true}
+        empresa_id: {label: Empresa}
+        empresaName: {label: Empresa, is_real: true}
+        num_recibo: {label: "N° de Voucher"}
+        descripcion: {label: "+detalles"}
+        fecha: {label: Fecha, tipo: "fecha_two"}
+        fechaTxt: {label: Fecha, is_real: true}
+        created_at: {label: Creado, tipo: "fecha_two"}
+        updated_at: {label: Ult. Act., tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        forPagoCoin: {label: F. Pago, is_real: true}
+        anulado: {label: Estatus}
+        coin: {label: Moneda}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Recibos de pago nn listado nn recibo_pago_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=ncontrol, company, pname, _documento, forPagoCoin, fechaTxt, monto, _anulado]
+        sort: [created_at, desc]
+        batch_actions:
+          _exportarBanco: ~
+      filter:
+        display: [_mask_filter, ncontrol, num_recibo, coin, forma_pago_id, banco_id, anulado, fecha, _creado_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Recibos de pago nn editar nn recibo_pago_compra
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Recibos de pago nn nuevo nn recibo_pago_compra
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Recibos de pago nn detalle nn recibo_pago_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

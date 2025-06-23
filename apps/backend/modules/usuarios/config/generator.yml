@@ -1,0 +1,95 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [sysadmin]
+        _edit:
+           label: editar
+           credentials: [sysadmin]
+        _delete:
+           label: eliminar
+           credentials: [sysadmin]
+        _new:
+           label: nuevo
+           credentials: [sysadmin]
+        _show:
+           label: mostrar
+           credentials: [sysadmin]
+        _save:
+           label: guardar
+           credentials: [sysadmin]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [sysadmin]
+        _list:
+           label: regresar
+           credentials: [sysadmin]
+        _reset:
+           label: borrar filtros
+           credentials: [sysadmin]
+      fields:
+        fullname: {label: Nombre completo, is_real: true}
+        full_name: {label: Nombre Completo}
+        username: {label: Usuario}
+        cargo: {label: Cargo}
+        url_imagen: {label: Avatar, tipo: "url_imagen"}
+        email_address: {label: Correo Electronico}
+        last_login: {label: Ultimo Inicio de Sesion, tipo: "fecha_two"}
+        is_active: {label: Activo, tipo: "checkbox_tag"}
+        is_super_admin: {label: Super Administrador, tipo: "checkbox_tag"}
+        created_at: {label: "Dia de Creacion", tipo: "fecha_two"}
+        updated_at: {label: "Ult. Actualizacion", tipo: "fecha_two"}
+        password: {label: Contraseña}
+        password_again: {label: Contraseña (repetir)}
+        groups_list: {label: Grupos}
+        permissions_list: {label: Permisos}
+        empresa_list: {label: Empresa(s)}
+        clave: {label: Clave supervisor}
+        cliente_id: {label: Cliente}
+      list:
+        title:   Usuarios nn listado nn sf_guard_user
+        display: [=username, full_name, email_address, is_active, url_imagen, last_login]
+        sort: [last_login, desc]
+        batch_actions: {}
+      filter:
+        display: [full_name, username, email_address, last_login, is_active, updated_at]
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          "Usuario": [url_imagen, full_name, username, email_address, cargo, password, password_again, clave]
+          "Permisos": [groups_list, permissions_list, empresa_list, cliente_id, is_active, is_super_admin, _mask]
+      edit:
+        title:   Usuarios nn editar nn sf_guard_user
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Usuarios nn nuevo nn sf_guard_user
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Usuarios nn detalle nn sf_guard_user
+        display:
+          "Usuario": [full_name, username, email_address, cargo, url_imagen]
+          "Permisos": [Cliente, is_active, is_super_admin]
+          Otros: [last_login, created_at, updated_at]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~

@@ -1,0 +1,104 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CotizacionCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          cotizacion_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[farmacia, cot1, cot2, cot3]]
+        _edit:
+          label: editar
+          credentials: [[farmacia, cot1, cot2]]
+        _delete:
+          label: eliminar
+          credentials: [[farmacia, cot1]]
+        _anular:
+          label: anular
+          credentials: [[farmacia, cot1]]
+        _new:
+          label: nuevo
+          credentials: [[farmacia, cot1, cot2]]
+        _show:
+          label: mostrar
+          credentials: [[farmacia, cot1, cot2, cot3]]
+        _save:
+          label: guardar
+          credentials: [[farmacia, cot1, cot2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[farmacia, cot1, cot2]]
+        _list:
+          label: listado
+          credentials: [[farmacia, cot1, cot2, cot3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[farmacia, cot1, cot2, cot3]]
+        _add_item:
+          label: agregar item
+          credentials: [[farmacia, cot1, cot2]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° Control, is_real: true}
+        num_factura: {label: N° de Factura, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        emin: {label: Empresa, is_real: true}
+        totalf: {label: Total, is_real: true}
+      list:
+        title: Cotizaciones de compra nn listado nn cotizacion_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [emin, =ncontrol, razon_social, _totalf, created_at, _estatus]
+        sort: [ncontrol, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Cotizaciones de compra nn editar nn cotizacion_compra
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Cotizaciones de compra nn nuevo nn cotizacion_compra
+        actions:
+          _list: ~
+          _new: ~
+          _save: ~
+      show:
+        title:   Cotizaciones de compra nn detalle nn cotizacion_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

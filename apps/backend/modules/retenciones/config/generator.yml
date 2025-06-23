@@ -1,0 +1,104 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Retenciones
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          retenciones
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[cajero, ret1, ret2, ret3]]
+        _edit:
+          label: editar
+          credentials: [[admin, ret1, ret2]]
+        _delete:
+          label: eliminar
+          credentials: [[admin, ret1]]
+        _anular:
+          label: anular
+          credentials: [[supervisor_admin, ret1]]
+        _new:
+          label: nuevo
+          credentials: [[cajero, ret1, ret2]]
+        _show:
+          label: mostrar
+          credentials: [[cajero, ret1, ret2, ret3]]
+        _save:
+          label: guardar
+          credentials: [[cajero, ret1, ret2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[cajero, ret1, ret2]]
+        _list:
+          label: listado
+          credentials: [[cajero, ret1, ret2, ret3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cajero, ret1, ret2, ret3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cajero, ret1, ret2, ret3]]
+        _relacionRetenciones:
+          label: RELACION DE RETENCIONES
+          target: _blank
+          credentials: [[analista_03, ret1, ret2, ret3]]
+      fields:
+        monto: {label: Monto BS, is_real: true}
+        descripcion: {label: Descripcion}
+        cliente_id: {label: Cliente}
+        clienteName: {label: Cliente, is_real: true}
+        empresa_id: {label: Empresa}
+        empresaName: {label: Empresa, is_real: true}
+        fecha: {label: Fecha, tipo: "fecha_two"}
+        fechaTxt: {label: Fecha, is_real: true}
+        created_at: {label: Creado, tipo: "fecha_two"}
+        updated_at: {label: Ult. Act., tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        anulado: {label: Estatus}
+        tipoTxt: {label: Tipo, is_real: true}
+        factura: {label: Factura, is_real: true}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Retenciones nn listado nn retenciones
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [company, clienteName, tipoTxt, =comprobante, _factura, _monto, _anulado, fechaTxt]
+        sort: [created_at, desc]
+        batch_actions:
+          _relacionRetenciones: ~
+      filter:
+        display: [_mask_filter, comprobante, anulado, fecha, _blank3, _creado_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Retenciones nn editar nn retenciones
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Retenciones nn nuevo nn retenciones
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Retenciones nn detalle nn retenciones
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

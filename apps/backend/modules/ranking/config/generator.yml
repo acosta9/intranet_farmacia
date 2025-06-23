@@ -1,0 +1,68 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProdVendidos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          prod_vendidos_ranking
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[compra2, rancli1, rancli2, rancli3]]
+        _edit:
+           label: editar
+           credentials: [[compra2, rancli1, rancli2]]
+        _delete:
+           label: eliminar
+           credentials: [[compra2, rancli1]]
+        _new:
+           label: nuevo
+           credentials: [[compra2, rancli1, rancli2]]
+        _show:
+           label: mostrar
+           credentials: [[compra2, rancli1, rancli2, rancli3]]
+        _save:
+           label: guardar
+           credentials: [[compra2, rancli1, rancli2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[compra2, rancli1, rancli2]]
+        _list:
+           label: listado
+           credentials: [[compra2, rancli1, rancli2, rancli3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[compra2, rancli1, rancli2]]
+        _reporteGeneral:
+           label: REPORTE GENERAL
+           target: _blank
+           credentials: [[compra2, rancli1, rancli2, rancli3]]
+      fields:
+        cname: {label: Cliente, is_real: true}
+        docid: {label: CI/RIF, is_real: true}
+        emin: {label: Empresa, is_real: true}
+        idname: {label: Deposito, is_real: true}
+        pname: {label: Producto, is_real: true}
+        sname: {label: Serial, is_real: true}
+        qty: {label: Qty, is_real: true}
+        total: {label: Total, is_real: false}
+        unit: {label: Presentacion, is_real: true}
+        fecha: {label: Fecha, tipo: "fecha_two"}
+        oferta: {label: Oferta}
+      list:
+        table_method: doSelectJoinRanking
+        title: Ranking de clientes nn listado nn prod_vendidos_ranking
+        display: [emin, idname, cname, docid, qty, _total]
+        sort: [qty, desc]
+        batch_actions:
+          _reporteGeneral: ~
+        actions: {}
+      filter:
+        display: [_mask_filter, fecha]

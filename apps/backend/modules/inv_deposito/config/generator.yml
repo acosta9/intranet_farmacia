@@ -1,0 +1,96 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           InvDeposito
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          inv_deposito
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[sysadmin, alm1, alm2, alm3]]
+        _edit:
+           label: editar
+           credentials: [[sysadmin, alm1, alm2]]
+        _delete:
+           label: eliminar
+           credentials: [[sysadmin, alm1]]
+        _new:
+           label: nuevo
+           credentials: [[sysadmin, alm1, alm2]]
+        _show:
+           label: mostrar
+           credentials: [[sysadmin, alm1, alm2, alm3]]
+        _save:
+           label: guardar
+           credentials: [[sysadmin, alm1, alm2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[sysadmin, alm1, alm2]]
+        _list:
+           label: listado
+           credentials: [[sysadmin, alm1, alm2, alm3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[sysadmin, alm1, alm2, alm3]]
+      fields:
+        id: {label: Cod}
+        nombre: {label: Nombre}
+        empresa_id: {label: Empresa}
+        Empresa: {label: Empresa, is_real: true}
+        EmpresaName: {label: Empresa, is_real: true}
+        tipo: {label: Tipo}
+        TipoDeposito: {label: Tipo, is_real: true}
+        descripcion: {label: Descripcion}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        acronimo: {label: Acronimo}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Depositos nn listado nn inv_deposito
+        display: [id, company, =nombre, TipoDeposito, created_at, updated_at]
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, nombre, descripcion]
+      form:
+        display:
+          requeridos: [_mask, nombre, acronimo, tipo, descripcion]
+      edit:
+        title:   Depositos nn editar nn inv_deposito
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Depositos nn nuevo nn inv_deposito
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Depositos nn detalle nn inv_deposito
+        display:
+          requeridos: [_mask_show]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~

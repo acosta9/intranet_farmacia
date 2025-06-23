@@ -1,0 +1,11 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+printzSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+printczSuccess:
+  has_layout:     true
+  layout:         layout_print  

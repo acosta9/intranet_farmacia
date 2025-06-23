@@ -1,0 +1,3 @@
+<td colspan="11">
+  <?php echo __('%%id%% - %%sf_guard_user_id%% - %%producto_id%% - %%cantidad%% - %%codigo%% - %%descripcion%% - %%precio_bruto%% - %%desc_porcentaje%% - %%desc_bolivares%% - %%neto%% - %%total%%', array('%%id%%' => link_to($carrito->getId(), 'carrito_edit', $carrito), '%%sf_guard_user_id%%' => $carrito->getSfGuardUserId(), '%%producto_id%%' => $carrito->getProductoId(), '%%cantidad%%' => $carrito->getCantidad(), '%%codigo%%' => $carrito->getCodigo(), '%%descripcion%%' => $carrito->getDescripcion(), '%%precio_bruto%%' => $carrito->getPrecioBruto(), '%%desc_porcentaje%%' => $carrito->getDescPorcentaje(), '%%desc_bolivares%%' => $carrito->getDescBolivares(), '%%neto%%' => $carrito->getNeto(), '%%total%%' => $carrito->getTotal()), 'messages') ?>
+</td>

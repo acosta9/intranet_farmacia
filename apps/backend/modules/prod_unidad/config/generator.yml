@@ -1,0 +1,90 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProdUnidad
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          prod_unidad
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, pre1, pre2, pre3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, pre1, pre2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, pre1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, pre1, pre2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, pre1, pre2, pre3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, pre1, pre2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, pre1, pre2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, pre1, pre2, pre3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, pre1, pre2, pre3]]
+      fields:
+        nombre: {label: Nombre}
+        codigo: {label: Codigo}
+        CodFull: {label: Codigo, is_real: true}
+        descripcion: {label: Acronimo}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+      list:
+        title: Presentaciones nn listado nn prod_unidad
+        display: [=nombre, descripcion, created_at, updated_at]
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [nombre, descripcion]
+      form:
+        display:
+          requeridos: [nombre, descripcion, _mask]
+      edit:
+        title:   Presentaciones nn editar nn prod_unidad
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Presentaciones nn nuevo nn prod_unidad
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Presentaciones nn detalle nn prod_unidad
+        display:
+          requeridos: [nombre, descripcion]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~
+          _delete: ~

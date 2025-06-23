@@ -1,0 +1,64 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Kardex
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          kardex
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[farmacia, auditorinv, kar1, kar2, kar3]]
+        _edit:
+           label: editar
+           credentials: [[farmacia, kar1, kar2]]
+        _delete:
+           label: eliminar
+           credentials: [[farmacia, kar1]]
+        _new:
+           label: nuevo
+           credentials: [[farmacia, kar1, kar2]]
+        _show:
+           label: mostrar
+           credentials: [[farmacia, auditorinv, kar1, kar2, kar3]]
+        _save:
+           label: guardar
+           credentials: [[farmacia, kar1, kar2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[farmacia, kar1, kar2]]
+        _list:
+           label: listado
+           credentials: [[farmacia, auditorinv, kar1, kar2, kar3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[farmacia, auditorinv, kar1, kar2, kar3]]
+        _reporteFirst:
+           label: REPORTE KARDEX
+           target: _blank
+           credentials: [[farmacia, auditorinv, kar1, kar2, kar3]]
+      fields:
+        cname: {label: Cliente, is_real: false}
+        emin: {label: Empresa, is_real: false}
+        idname: {label: Deposito, is_real: false}
+        pname: {label: Producto, is_real: false}
+        qty: {label: Qty, is_real: true}
+        fecha: {label: Fecha, tipo: "fecha_two", is_real: false}
+        qty_minus: {label: Qty}
+        concepto: {label: Concepto, is_real: false}
+      list:
+        table_method: doSelectJoinOtros
+        title: Kardex nn listado nn kardex
+        display: [emin, idname, _concepto, pname, _qty_minus, fecha]
+        batch_actions:
+          _reporteFirst: ~
+        actions: {}
+      filter:
+        display: [_mask_filter, fecha]

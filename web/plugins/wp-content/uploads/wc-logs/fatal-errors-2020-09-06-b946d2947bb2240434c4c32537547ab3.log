@@ -1,0 +1,114 @@
+2020-09-06T13:57:38+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T13:57:43+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:18:52+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:19:00+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:22:16+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:27:11+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:29:40+00:00 CRITICAL Uncaught Error: Call to undefined function simplexml_load_file() in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php:424
+Stack trace:
+#0 /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php(187): safe_svg->svg_dimensions()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): safe_svg->fix_admin_preview()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(206): WP_Hook->apply_filters()
+#3 /var/www/html/woodmart/wp-includes/media.php(3966): apply_filters()
+#4 [internal function]: wp_prepare_attachment_for_js()
+#5 /var/www/html/woodmart/wp-admin/includes/ajax-actions.php(2993): array_map()
+#6 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): wp_ajax_query_attachments()
+#7 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#8 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#9 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#10 {main}
+  thrown in /var/www/html/woodmart/wp-content/plugins/safe-svg/safe-svg.php on line 424
+
+2020-09-06T16:44:10+00:00 CRITICAL Uncaught Error: Call to undefined function woodmart_elementor_products_tab_template() in /var/www/html/woodmart/wp-content/themes/woodmart/inc/integrations/woocommerce/functions.php:10
+Stack trace:
+#0 /var/www/html/woodmart/wp-includes/class-wp-hook.php(287): woodmart_get_products_tab_ajax()
+#1 /var/www/html/woodmart/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/woodmart/wp-includes/plugin.php(478): WP_Hook->do_action()
+#3 /var/www/html/woodmart/wp-admin/admin-ajax.php(176): do_action()
+#4 {main}
+  thrown in /var/www/html/woodmart/wp-content/themes/woodmart/inc/integrations/woocommerce/functions.php on line 10
+

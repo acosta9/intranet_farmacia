@@ -1,0 +1,15 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+printSuccess:
+  has_layout: true
+  layout: layout_print
+
+batchReporteProductosSuccess:
+  has_layout:     true
+  layout:         layout_print
+
+batchReporteProdFarmaSuccess:
+  has_layout:     true
+  layout:         layout_print

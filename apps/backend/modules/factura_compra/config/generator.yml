@@ -1,0 +1,123 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           FacturaCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          factura_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+        _edit:
+          label: editar
+          credentials: [[farmacia, faccom1, faccom2]]
+        _delete:
+          label: eliminar
+          credentials: [[farmacia, faccom1]]
+        _anular:
+          label: anular
+          credentials: [[farmacia, faccom1]]
+        _new:
+          label: nuevo
+          credentials: [[farmacia, faccom1, faccom2]]
+        _show:
+          label: mostrar
+          credentials: [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+        _save:
+          label: guardar
+          credentials: [[farmacia, faccom1, faccom2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[farmacia, faccom1, faccom2]]
+        _list:
+          label: listado
+          credentials: [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+        _print:
+          label: imprimir
+          credentials: [[farmacia, cuentaspagar, faccom1, faccom2, faccom3]]
+        _add_item:
+          label: agregar item
+          credentials: [[farmacia, faccom1, faccom2]]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [[farmacia, faccom1, faccom2]]
+        _reportePendientes:
+          label: REPORTE PENDIENTES POR COBRAR
+          target: _blank
+          credentials: [[farmacia, faccom1, faccom2, faccom3]]
+        _reportePrefacturados:
+          label: REPORTE TOTAL PROCESADO
+          target: _blank
+          credentials: [[farmacia, faccom1, faccom2, faccom3]]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° Control, is_real: true}
+        num_factura: {label: N° de Factura, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        fecha_recepcion: {label: Fecha de recepcion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        nulo: {label: Anulado, is_real: true}
+        coin: {label: Moneda}
+        pagado: {label: Pagado}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        hasfact: {label: Posee una factura}
+        company: {label: Empresa, is_real: true}
+        id: {label: Cod.}
+        oecontrol: {label: OC N°, is_real: true}
+      list:
+        title: Facturas de compra nn listado nn factura_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [id, num_factura, oecontrol, company, razon_social, _date, TotalCoin, PendienteCoin, _estatus]
+        sort: [ncontrol, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, razon_social, doc_id, ncontrol, num_factura, estatus, fecha, fecha_recepcion, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Facturas de compra nn editar nn factura_compra
+        actions:
+          _list: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Facturas de compra nn nuevo nn factura_compra
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Facturas de compra nn detalle nn factura_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~

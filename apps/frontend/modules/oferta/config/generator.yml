@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Oferta
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          oferta
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        catname: {label: Categoria}
+      list:
+        table_method: doSelectJoinOtros2
+        max_per_page: 15
+      filter:
+        display: [nombre]
+      form:    ~
+      edit:    ~
+      new:     ~

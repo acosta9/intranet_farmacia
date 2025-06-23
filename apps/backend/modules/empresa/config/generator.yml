@@ -1,0 +1,116 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Empresa
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          empresa
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[sysadmin, emp1, emp2, emp3]]
+        _edit:
+           label: editar
+           credentials: [[sysadmin, emp1, emp2]]
+        _delete:
+           label: eliminar
+           credentials: [[sysadmin, emp1]]
+        _new:
+           label: nuevo
+           credentials: [[sysadmin, emp1, emp2]]
+        _show:
+           label: mostrar
+           credentials: [[sysadmin, emp1, emp2, emp3]]
+        _save:
+           label: guardar
+           credentials: [[sysadmin, emp1, emp2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[sysadmin, emp1, emp2]]
+        _list:
+           label: listado
+           credentials: [[sysadmin, emp1, emp2, emp3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[sysadmin, emp1, emp2, emp3]]
+      fields:
+        id: {label: Codigo}
+        cod_coorpotulipa: {label: Cod. Coorpotulipa}
+        nombre: {label: Nombre}
+        rif: {label: Rif}
+        direccion: {label: Direccion}
+        telefono: {label: Telefono}
+        tipo: {label: Tipo}
+        descripcion: {label: Descripcion}
+        iva: {label: IVA (%)}
+        venc_registro_comercio: {label: Registro Comercio}
+        venc_rif: {label: Rif}
+        venc_bomberos: {label: Bomberos}
+        venc_lic_funcionamiento: {label: Licencia de funcionamiento}
+        venc_uso_conforme: {label: Uso conforme}
+        venc_permiso_sanitario: {label: Sanitario}
+        venc_permiso_instalacion: {label: Instalacion y funcionamiento}
+        venc_destinado_afines: {label: Destinado y Afines}
+        venc_destinado_abastos: {label: Destinado y Abastos}
+        ncontrol: {label: N° de Control Fact.}
+        nfactura: {label: N° de Factura}
+        ndespacho: {label: N° de Nota Despacho}
+        nentrega: {label: N° de Nota Entrega}
+        npago: {label: N° de Recibo Pago}
+        ncredito: {label: N° de Nota de Credito}
+        ntraslado: {label: N° de Traslado}
+        email: {label: Correo Electronico}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        tasa: {label: Tipo tasa de cambio}
+        acronimo: {label: Acronimo}
+        ncompra: {label: N° Orden de Venta}
+        factcompra: {label: N° Factura de Compra}
+        ordencompra: {label: N° Orden de Compra}
+        coticompra: {label: N° Cotizacion de Compra}
+        factgasto: {label: N° Factura de gastos}
+      list:
+        title: Empresas nn listado nn empresa
+        display: [id, =nombre, rif, telefono, created_at, updated_at]
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [nombre, rif, telefono, tipo, _mask_filter]
+      form:
+        display:
+          requeridos: [_mask, nombre, acronimo, rif, tipo, email, telefono, _blank3, direccion, descripcion]
+          Variables y Codigos: [tasa, iva, _blank6, cod_coorpotulipa, ncontrol, nfactura, _blank3, ndespacho, nentrega, npago, ncredito, ntraslado, ncompra, factcompra, factgasto, ordencompra, coticompra]
+          fecha vencimiento permisos: [venc_registro_comercio, venc_rif, venc_bomberos, venc_lic_funcionamiento, venc_uso_conforme, venc_permiso_sanitario, venc_permiso_instalacion, venc_destinado_afines, venc_destinado_abastos]
+      edit:
+        title:   Empresas nn editar nn empresa
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Empresas nn nuevo nn empresa
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Empresas nn detalle nn empresa
+        display:
+          Requeridos: [_mask_show]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~

@@ -1,0 +1,8 @@
+historial:
+  is_secure: true
+
+micuenta:
+  is_secure: true
+
+favoritos:
+  is_secure: true

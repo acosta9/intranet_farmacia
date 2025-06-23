@@ -1,0 +1,7 @@
+default:
+  has_layout:     true
+  layout:         layout
+
+batchSaldoProveedoresSuccess:
+  has_layout:     true
+  layout:         layout_print

@@ -1,0 +1,106 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           contactenos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          contactenos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [sysadmin]
+        _edit:
+           label: editar
+           credentials: [sysadmin]
+        _delete:
+           label: eliminar
+           credentials: [sysadmin]
+        _new:
+           label: nuevo
+           credentials: [sysadmin]
+        _show:
+           label: mostrar
+           credentials: [sysadmin]
+        _save:
+           label: guardar
+           credentials: [sysadmin]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [sysadmin]
+        _list:
+           label: listado
+           credentials: [sysadmin]
+        _reset:
+           label: borrar filtros
+           credentials: [sysadmin]
+      fields:
+        estatus: {label: Leido, tipo: "checkbox_tag"}
+        nombre: {label: Titulo}
+        orden: {label: Orden}
+        posicion: {label: Posicion}
+        enlace: {label: Enlace}
+        texto: {label: Contenido}
+        contenido_cat_id: {label: Categoria}
+        ContenidoCat: {label: Categoria, is_real: true}
+        galeria_id: {label: Galeria}
+        Galeria: {label: Nombre de galeria}
+        Galeriaa: {label: Nombre de galeria}
+        url_imagen: {label: Imagen, tipo: url_imagen}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+      list:
+        title:   Contactenos nn listado nn contactenos
+        display: [=nombre, email, estatus, created_at, updated_at]
+        sort: [updated_at, desc]
+        object_actions:
+          _show: ~
+          _edit: ~
+          _delete: ~
+        actions: {}
+        batch_actions: {}
+      filter:
+        display: [nombre, email, estatus, _blank3, created_at, updated_at]
+      form:
+        display:
+          requeridos: [orden, posicion, nombre, enlace, url_imagen, texto]
+        actions:
+          _delete:  ~
+          _list: ~
+          _show: ~
+          _save: ~
+          _save_and_add: ~
+      edit:
+        title:   Contactenos nn editar nn contactenos
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Contactenos nn nuevo nn contactenos
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Contactenos nn registro nn contactenos
+        display:
+          requeridos: [nombre, email, estatus]
+          mensaje: [mensaje]
+          otros:      [created_at, updated_at, _mask_show]
+        actions:
+          _list: ~

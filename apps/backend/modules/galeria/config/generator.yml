@@ -1,0 +1,101 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           galeria
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          galeria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [sysadmin]
+        _edit:
+           label: editar
+           credentials: [sysadmin]
+        _delete:
+           label: eliminar
+           credentials: [sysadmin]
+        _new:
+           label: nuevo
+           credentials: [sysadmin]
+        _show:
+           label: mostrar
+           credentials: [sysadmin]
+        _save:
+           label: guardar
+           credentials: [sysadmin]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [sysadmin]
+        _list:
+           label: listado
+           credentials: [sysadmin]
+        _reset:
+           label: borrar filtros
+           credentials: [sysadmin]
+      fields:
+        nombre: {label: Titulo}
+        orden: {label: Orden}
+        posicion: {label: Posicion}
+        enlace: {label: Enlace}
+        texto: {label: Contenido}
+        contenido_cat_id: {label: Categoria}
+        ContenidoCat: {label: Categoria, is_real: true}
+        galeria_id: {label: Galeria}
+        Galeria: {label: Nombre de galeria}
+        Galeriaa: {label: Nombre de galeria}
+        url_imagen: {label: Imagen, tipo: url_imagen}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+      list:
+        title:   Slider nn listado nn galeria
+        display: [=nombre, orden, posicion, url_imagen, updated_at, UpdatedByUser]
+        sort: [updated_at, desc]
+        batch_actions: {}
+      filter:
+        display: [nombre, texto, updated_at, created_by]
+      form:
+        display:
+          requeridos: [orden, posicion, nombre, enlace, url_imagen, texto]
+        actions:
+          _delete:  ~
+          _list: ~
+          _show: ~
+          _save: ~
+          _save_and_add: ~
+      edit:
+        title:   Slider nn editar nn galeria
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Slider nn nuevo nn galeria
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Slider nn detalle nn galeria
+        display:
+          requeridos: [orden, posicion, nombre, enlace, url_imagen, texto]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _delete: ~

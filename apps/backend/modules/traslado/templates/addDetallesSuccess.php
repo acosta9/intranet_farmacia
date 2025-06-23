@@ -1,0 +1,11 @@
+<?php echo $form['traslado_det'][$num]['qty']->render()?>
+<?php echo $form['traslado_det'][$num]['price_unit']->render()?>
+<?php echo $form['traslado_det'][$num]['price_tot']->render()?>
+<?php echo $form['traslado_det'][$num]['inventario_id']->render()?>
+<?php echo $form['traslado_det'][$num]['producto_id']->render()?>
+<?php echo $form['traslado_det'][$num]['inv_destino_id']->render()?>
+<?php echo $form['traslado_det'][$num]['qty_dest']->render()?>
+<?php echo $form['traslado_det'][$num]['inv_desglose_id']->render()?>
+<?php echo $form['traslado_det'][$num]['qty_dest_desglose']->render()?>
+<?php echo $form['traslado_det'][$num]['exento']->render()?>
+<?php echo $form['traslado_det'][$num]['descripcion']->render()?>

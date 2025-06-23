@@ -1,0 +1,113 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Cliente
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          cliente
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+           label: indice
+           credentials: [[sysadmin, cli1, cli2, cli3]]
+        _edit:
+           label: editar
+           credentials: [[sysadmin, cli1, cli2]]
+        _delete:
+           label: eliminar
+           credentials: [[sysadmin, cli1]]
+        _new:
+           label: nuevo
+           credentials: [[sysadmin, cli1, cli2]]
+        _show:
+           label: mostrar
+           credentials: [[sysadmin, cli1, cli2, cli3]]
+        _save:
+           label: guardar
+           credentials: [[sysadmin, cli1, cli2]]
+        _save_and_add:
+           label: guardar y agregar nuevo
+           credentials: [[sysadmin, cli1, cli2]]
+        _list:
+           label: listado
+           credentials: [[sysadmin, cli1, cli2, cli3]]
+        _reset:
+           label: borrar filtros
+           credentials: [[sysadmin, cli1, cli2, cli3]]
+        _reporteClientes:
+           label: REPORTE DE CLIENTES
+           target: _blank
+           credentials: [[sysadmin, cli1, cli2, cli3]]
+      fields:
+        sicm: {label: SICM}
+        zona: {label: Zona}
+        full_name: {label: Nombre}
+        doc_id: {label: RIF/CI}
+        telefono: {label: Telf(s)}
+        telf: {label: Telefono (1)}
+        celular: {label: Telefono (2)}
+        email: {label: Correo Electronico}
+        tipo_precio: {label: Tipo Precio}
+        tipo: {label: Tipo Precio}
+        TipoDePrecio: {label: Tipo Precio, is_real: true}
+        direccion: {label: Direccion}
+        descripcion: {label: Descripcion}
+        vendedor: {label: Vendedor}
+        vendedor_01: {label: Vendedor 01}
+        vendedor_01_profit: {label: Vendedor 01 (%)}
+        vendedor_02: {label: Vendedor 02}
+        vendedor_02_profit: {label: Vendedor 02 (%)}
+        dias_credito: {label: Dias de Credito}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        company: {label: Empresa, is_real: true}
+        dias_credito: {label: D. Cdto}
+      list:
+        title: Clientes nn listado nn cliente
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [company, =full_name, doc_id, telf, TipoDePrecio, dias_credito, _activo]
+        sort: [updated_at, desc]
+        batch_actions:
+          _reporteClientes: ~
+      filter:
+        display: [_mask_filter, full_name, doc_id, telefono, tipo, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_header, _mask]
+          comisiones: [vendedor_01, vendedor_01_profit, vendedor_02, vendedor_02_profit]
+      edit:
+        title:   Clientes nn editar nn cliente
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Clientes nn nuevo nn cliente
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Clientes nn detalle nn cliente
+        display:
+          requeridos: [_mask_show]
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt]
+        actions:
+          _list: ~
+          _new: ~
+          _edit: ~

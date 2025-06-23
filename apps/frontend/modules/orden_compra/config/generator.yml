@@ -1,0 +1,128 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           OrdenCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          orden_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [website]
+        _edit:
+          label: editar
+          credentials: [website]
+        _delete:
+          label: eliminar
+          credentials: [website]
+        _anular:
+          label: anular
+          credentials: [website]
+        _new:
+          label: nuevo
+          credentials: [website]
+        _show:
+          label: mostrar
+          credentials: [website]
+        _save:
+          label: guardar
+          credentials: [website]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [website]
+        _list:
+          label: listado
+          credentials: [website]
+        _reset:
+          label: borrar filtros
+          credentials: [website]
+        _print:
+          label: imprimir
+          credentials: [website]
+        _add_item:
+          label: agregar item
+          credentials: [website]
+        _add_oferta:
+          label: agregar oferta
+          credentials: [website]
+        _reportePendientes:
+          label: REPORTE PENDIENTES POR COBRAR
+          target: _blank
+          credentials: [website]
+        _reportePrefacturados:
+          label: REPORTE TOTAL PROCESADO
+          target: _blank
+          credentials: [website]
+      fields:
+        fecha: {label: Fecha de Emisión, tipo: "fecha_two"}
+        date: {label: Fecha de Emisión, is_real: true}
+        factura: {label: Fact, is_real: true}
+        ncontrol: {label: N° de Control, is_real: true}
+        num_factura: {label: N° de Factura, is_real: true}
+        descripcion: {label: Descripcion}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        descripcion: {label: "+detalles"}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        nulo: {label: Anulado, is_real: true}
+        coin: {label: Moneda}
+        pagado: {label: Pagado}
+        PendienteCoin: {label: Por Pagar, is_real: true}
+        TotalCoin: {label: Total, is_real: true}
+        hasfact: {label: Posee una factura}
+        ename: {label: Empresa, is_real: true}
+        cname: {label: Cliente, is_real: true}
+        estatus: {label: Estatus, is_real: true}
+        id: {label: Cod.}
+        detalle: {label: ""}
+      list:
+        title: Ordenes de compra nn listado nn orden_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=id, ename, cname, _created_at, TotalCoin, _estatus, _detalle]
+        sort: [id, desc]
+        batch_actions: {}
+      filter:
+        display: [id]
+      form:
+        display:
+          requeridos: [_mask, _det]
+      edit:
+        title:   Ordenes de compra nn editar nn orden_compra
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Ordenes de compra nn nuevo nn orden_compra
+        actions:
+          _list: ~
+          _new: ~
+          _save: ~
+      show:
+        title:   Ordenes de compra nn detalle nn orden_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~

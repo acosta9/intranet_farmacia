@@ -1,0 +1,99 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           OrdenesCompra
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          ordenes_compra
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[farmacia, ordcom1, ordcom2, ordcom3]]
+        _edit:
+          label: editar
+          credentials: [[farmacia, ordcom1, ordcom2]]
+        _delete:
+          label: eliminar
+          credentials: [[farmacia, ordcom1]]
+        _anular:
+          label: anular
+          credentials: [[farmacia, ordcom1]]
+        _new:
+          label: nuevo
+          credentials: [[farmacia, ordcom1, ordcom2]]
+        _show:
+          label: mostrar
+          credentials: [[farmacia, ordcom1, ordcom2, ordcom3]]
+        _save:
+          label: guardar
+          credentials: [[farmacia, ordcom1, ordcom2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[farmacia, ordcom1, ordcom2]]
+        _list:
+          label: listado
+          credentials: [[farmacia, ordcom1, ordcom2, ordcom3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[farmacia, ordcom1, ordcom2, ordcom3]]
+        _add_item:
+          label: agregar item
+          credentials: [[farmacia, ordcom1, ordcom2]]
+      fields:
+        ncontrol: {label: N° Control, is_real: true}
+        client_id: {label: Cliente}
+        doc_id: {label: Doc. de Identidad}
+        direccion: {label: Dir. de facturacion}
+        telf: {label: Telf. Primario}
+        created_at: {label: Dia de Creacion, tipo: "fecha_two"}
+        updated_at: {label: Ult. Actualizacion, tipo: "fecha_two"}
+        created_by: {label: Creado por}
+        updated_by: {label: Actualizado por}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        Updator: {label: Act. por}
+        creado_por: {label: Creado por}
+        updated_por: {label: Actualizado por}
+        emin: {label: Empresa, is_real: true}
+        totalf: {label: Total, is_real: true}
+        cncontrol: {label: Cotizacion, is_real: true}
+      list:
+        title: Ordenes de compra nn listado nn ordenes_compra
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [emin, =ncontrol, _cncontrol, razon_social, _totalf, created_at, _estatus]
+        sort: [ncontrol, desc]
+        batch_actions: {}
+        actions: {}
+      filter:
+        display: [_mask_filter, created_at, updated_at, creado_por, updated_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Ordenes de compra nn editar nn ordenes_compra
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _delete: ~
+          _save: ~
+      new:
+        title:   Ordenes de compra nn nuevo nn ordenes_compra
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Ordenes de compra nn detalle nn ordenes_compra
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~

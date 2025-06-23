@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Producto
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          producto
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _edit:
+           label: editar
+        _delete:
+           label: eliminar
+        _new:
+           label: nuevo
+        _show:
+           label: mostrar
+        _save:
+           label: guardar
+        _save_and_add:
+           label: guardar y agregar nuevo
+        _list:
+           label: regresar a la lista
+        _reset:
+           label: borrar filtros
+        _add_detalles:
+          label: agregar imagen
+      fields:
+        nombre: {label: Nombre}
+        producto_cat_id: {label: Categoría}
+        producto_marca_id: {label: Marca}
+        producto_tipo_id: {label: Tipo}
+      list:
+        max_per_page: 8
+      filter:
+        display: [nombre, producto_cat_id, producto_marca_id, producto_tipo_id]
+      form:    ~
+      edit:    ~
+      new:     ~

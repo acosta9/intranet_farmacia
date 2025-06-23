@@ -1,0 +1,102 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           NotaDebito
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          nota_debito
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _index:
+          label: indice
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+        _edit:
+          label: editar
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2]]
+        _delete:
+          label: eliminar
+          credentials: [[cuentaspagar, notcrecom1]]
+        _anular:
+          label: anular
+          credentials: [[cuentaspagar, notcrecom1]]
+        _new:
+          label: nuevo
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2]]
+        _show:
+          label: mostrar
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+        _save:
+          label: guardar
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2]]
+        _save_and_add:
+          label: guardar y agregar nuevo
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2]]
+        _list:
+          label: listado
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+        _reset:
+          label: borrar filtros
+          credentials: [[cuentaspagar, notcrecom1, notcrecom2, notcrecom3]]
+      fields:
+        monto: {label: Monto USD, is_real: true}
+        ncontrol: {label: Cod, is_real: true}
+        descripcion: {label: Descripcion}
+        proveedor_id: {label: Proveedor}
+        pname: {label: Proveedor, is_real: true}
+        empresa_id: {label: Empresa}
+        empresaName: {label: Empresa, is_real: true}
+        num_recibo: {label: "N° de Voucher"}
+        descripcion: {label: "+detalles"}
+        fecha: {label: Fecha, tipo: "fecha_two"}
+        fechaTxt: {label: Fecha, is_real: true}
+        created_at: {label: Creado, tipo: "fecha_two"}
+        updated_at: {label: Ult. Act., tipo: "fecha_two"}
+        CreatedAtTxt: {label: Creado}
+        UpdatedAtTxt: {label: Ult. Act}
+        Creator: {label: Creado por}
+        creado_por: {label: Creado por}
+        Updator: {label: Act. por}
+        forPagoCoin: {label: Forma de Pago, is_real: true}
+        estatus: {label: Estatus, is_real: true}
+        coin: {label: Moneda}
+        company: {label: Empresa, is_real: true}
+      list:
+        title: Notas de Credito nn listado nn nota_debito
+        table_method: doSelectJoinOtros
+        max_per_page: 20
+        display: [=ncontrol, company, pname, fechaTxt, monto, _estatus]
+        sort: [created_at, desc]
+        batch_actions: {}
+      filter:
+        display: [_mask_filter, ncontrol, coin, estatus, fecha, _creado_por]
+      form:
+        display:
+          requeridos: [_mask]
+      edit:
+        title:   Notas de Credito nn editar nn nota_debito
+        actions:
+          _list: ~
+          _new: ~
+          _show: ~
+          _save: ~
+      new:
+        title:   Notas de Credito nn nuevo nn nota_debito
+        actions:
+          _list: ~
+          _save: ~
+      show:
+        title:   Notas de Credito nn detalle nn nota_debito
+        display:
+          otros:      [Creator, Updator, CreatedAtTxt, UpdatedAtTxt, _mask_show]
+        actions:
+          _list: ~
+          _new: ~
