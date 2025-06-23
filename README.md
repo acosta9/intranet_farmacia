@@ -17,3 +17,11 @@ El proyecto fue realizado para una farmacia la cual constaba con multiples sucur
 
 * Entorno Distribuido: El sistema fue diseñado para operar en un entorno distribuido, permitiendo a distintas localizaciones trabajar de manera independiente pero consolidando toda la información en un sitio central.
 * REST API: Implementé una REST API para facilitar la sincronización y consolidación de datos entre las diferentes localizaciones, asegurando coherencia y disponibilidad de la información en tiempo real.
+
+### dashboard de farmacia y compras 
+![dashboard_farmacia](https://github.com/user-attachments/assets/9f95623d-fec5-4930-aec4-e620778dd19c)
+![dashboard_compras](https://github.com/user-attachments/assets/d3a79415-a549-4ed7-8fe5-67fe1de97e25)
+
+### listado completo de los modulos del sistema
+
+![menu_all_options](https://github.com/user-attachments/assets/7210b032-a34c-48b9-a7f7-a831e93c3107)
