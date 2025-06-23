@@ -23,5 +23,7 @@ El proyecto fue realizado para una farmacia la cual constaba con multiples sucur
 ![dashboard_compras](https://github.com/user-attachments/assets/d3a79415-a549-4ed7-8fe5-67fe1de97e25)
 
 ### listado completo de los modulos del sistema
-
 ![menu_all_options](https://github.com/user-attachments/assets/7210b032-a34c-48b9-a7f7-a831e93c3107)
+
+### frontend o pagina web para vendedores
+![frontend-vendedores](https://github.com/user-attachments/assets/af4ffd63-b6b9-4874-875e-42ae474ef47f)
